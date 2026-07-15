@@ -5,302 +5,11 @@
 
 <meta charset="UTF-8">
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>QIN LAB</title>
 
-
-<style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-
-body{
-
-    background:#050505;
-
-    color:#f5f1e8;
-
-    font-family:"Times New Roman",serif;
-
-    height:100vh;
-
-    overflow:hidden;
-
-}
-
-
-
-/* 星空 */
-
-.space{
-
-    position:absolute;
-
-    width:100%;
-
-    height:100%;
-
-}
-
-
-
-svg{
-
-    position:absolute;
-
-    width:100%;
-
-    height:100%;
-
-    pointer-events:none;
-
-}
-
-
-
-line{
-
-    stroke:#f5f1e8;
-
-    stroke-width:0.5;
-
-    opacity:0.15;
-
-}
-
-
-
-/* 星星 */
-
-.star{
-
-    position:absolute;
-
-    width:8px;
-
-    height:8px;
-
-    background:#f5f1e8;
-
-    border-radius:50%;
-
-    opacity:0.35;
-
-    cursor:pointer;
-
-    transition:0.5s;
-
-}
-
-
-
-.star.near{
-
-    opacity:1;
-
-    transform:scale(1.8);
-
-    box-shadow:
-
-    0 0 20px #f5f1e8;
-
-}
-
-
-
-.star.found{
-
-    opacity:1;
-
-    transform:scale(2);
-
-    box-shadow:
-
-    0 0 25px #f5f1e8,
-
-    0 0 60px #f5f1e8;
-
-}
-
-
-
-/* 小熊座位置 */
-
-.s1{
-
-    left:40%;
-
-    top:42%;
-
-}
-
-
-.s2{
-
-    left:46%;
-
-    top:35%;
-
-}
-
-
-.s3{
-
-    left:53%;
-
-    top:30%;
-
-}
-
-
-.s4{
-
-    left:61%;
-
-    top:33%;
-
-}
-
-
-.s5{
-
-    left:68%;
-
-    top:40%;
-
-}
-
-
-.s6{
-
-    left:60%;
-
-    top:50%;
-
-}
-
-
-.s7{
-
-    left:52%;
-
-    top:48%;
-
-}
-
-
-
-/* 北极星 */
-
-.polaris{
-
-    left:53%;
-
-    top:18%;
-
-    width:12px;
-
-    height:12px;
-
-    opacity:0.9;
-
-}
-
-
-
-/* 文字 */
-
-.container{
-
-    position:relative;
-
-    z-index:5;
-
-    height:100vh;
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
-
-    align-items:center;
-
-}
-
-
-
-.word{
-
-    font-size:80px;
-
-    letter-spacing:15px;
-
-    opacity:0;
-
-    animation:show 2s forwards;
-
-}
-
-
-
-.love{
-
-    animation-delay:1s;
-
-}
-
-
-
-.know{
-
-    margin-top:80px;
-
-    animation-delay:4s;
-
-}
-
-
-
-.logo{
-
-    margin-top:120px;
-
-    font-size:35px;
-
-    letter-spacing:12px;
-
-    opacity:0;
-
-    animation:show 2s forwards;
-
-    animation-delay:7s;
-
-}
-
-
-
-@keyframes show{
-
-    from{
-
-        opacity:0;
-
-    }
-
-
-    to{
-
-        opacity:1;
-
-    }
-
-}
-
-</style>
+<link rel="stylesheet" href="css/style.css">
 
 </head>
 
@@ -308,42 +17,60 @@ line{
 <body>
 
 
-<div class="space">
+<audio id="ambientSound" loop>
+
+    <source src="assets/audio/atmosphere.mp3" type="audio/mpeg">
+
+</audio>
 
 
-<svg>
 
-<line x1="40%" y1="42%" x2="46%" y2="35%"/>
+<div class="cursor"></div>
 
-<line x1="46%" y1="35%" x2="53%" y2="30%"/>
 
-<line x1="53%" y1="30%" x2="61%" y2="33%"/>
 
-<line x1="61%" y1="33%" x2="68%" y2="40%"/>
+<div class="universe">
 
-<line x1="68%" y1="40%" x2="60%" y2="50%"/>
 
-<line x1="60%" y1="50%" x2="52%" y2="48%"/>
+<svg class="constellation" viewBox="0 0 1000 700">
+
+
+<line x1="400" y1="420" x2="470" y2="360"/>
+
+<line x1="470" y1="360" x2="550" y2="330"/>
+
+<line x1="550" y1="330" x2="640" y2="360"/>
+
+<line x1="640" y1="360" x2="700" y2="430"/>
+
+<line x1="700" y1="430" x2="610" y2="500"/>
+
+<line x1="610" y1="500" x2="520" y2="470"/>
+
 
 </svg>
 
 
 
-<div class="star s1"></div>
 
-<div class="star s2"></div>
+<div class="star ursula s1"></div>
 
-<div class="star s3"></div>
+<div class="star ursula s2"></div>
 
-<div class="star s4"></div>
+<div class="star ursula s3"></div>
 
-<div class="star s5"></div>
+<div class="star ursula s4"></div>
 
-<div class="star s6"></div>
+<div class="star ursula s5"></div>
 
-<div class="star s7"></div>
+<div class="star ursula s6"></div>
+
+<div class="star ursula s7"></div>
+
+
 
 <div class="star polaris"></div>
+
 
 
 </div>
@@ -351,7 +78,8 @@ line{
 
 
 
-<div class="container">
+
+<div class="opening">
 
 
 <div class="word love">
@@ -368,6 +96,11 @@ I KNOW
 </div>
 
 
+</div>
+
+
+
+
 <div class="logo">
 
 QIN LAB
@@ -375,74 +108,9 @@ QIN LAB
 </div>
 
 
-</div>
 
 
-
-
-<script>
-
-const stars = document.querySelectorAll(".star");
-
-
-document.addEventListener(
-"mousemove",
-(e)=>{
-
-stars.forEach(star=>{
-
-
-let box = star.getBoundingClientRect();
-
-
-let x = box.left + box.width/2;
-
-
-let y = box.top + box.height/2;
-
-
-let distance = Math.sqrt(
-(e.clientX-x)**2+
-(e.clientY-y)**2
-);
-
-
-
-if(distance < 120){
-
-    star.classList.add("near");
-
-}
-
-else if(!star.classList.contains("found")){
-
-    star.classList.remove("near");
-
-}
-
-
-});
-
-
-});
-
-
-
-
-stars.forEach(star=>{
-
-
-star.onclick=()=>{
-
-    star.classList.add("found");
-
-};
-
-
-});
-
-
-</script>
+<script src="js/script.js"></script>
 
 
 </body>
