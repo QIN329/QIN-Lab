@@ -2,134 +2,426 @@
 <html lang="en">
 
 <head>
-    
+
 <meta charset="UTF-8">
 
-<title>Qin Lab</title>
+<title>QIN LAB</title>
 
 
 <style>
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
+*{
 
-body {
-
-    background: #0b0b0b;
-    color: #f5f1e8;
-    font-family: "Times New Roman", serif;
-    height: 100vh;
-    overflow: hidden;
-
-}
-
-
-.container {
-
-    height: 100vh;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
-
-    align-items: center;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 
 }
 
 
 
-.word {
+body{
 
-    font-size: 80px;
 
-    letter-spacing: 15px;
+    background:
+    radial-gradient(
+        circle at center,
+        #151515 0%,
+        #090909 45%,
+        #030303 100%
+    );
 
-    opacity: 0;
 
-    animation: appear 2s forwards;
+    color:#f5f1e8;
+
+
+    font-family:"Times New Roman", serif;
+
+
+    height:100vh;
+
+
+    overflow:hidden;
+
 
 }
 
 
 
-.love {
 
-    animation-delay: 1s;
+
+/* 星空 */
+
+
+.stars{
+
+
+    position:absolute;
+
+
+    width:100%;
+
+
+    height:100%;
+
 
 }
 
 
 
-.know {
 
-    margin-top: 80px;
 
-    animation-delay: 4s;
+.star{
+
+
+    position:absolute;
+
+
+    width:5px;
+
+
+    height:5px;
+
+
+    background:#f5f1e8;
+
+
+    border-radius:50%;
+
+
+    opacity:0.35;
+
+
+    cursor:pointer;
+
+
+    transition:all .6s ease;
+
+
+    animation:twinkle 6s infinite ease-in-out;
+
 
 }
 
 
 
-.logo {
 
-    margin-top: 120px;
+/* 鼠标靠近 */
 
-    font-size: 35px;
 
-    letter-spacing: 12px;
+.star:hover{
 
-    opacity: 0;
 
-    animation: appear 2s forwards;
+    opacity:1;
 
-    animation-delay: 7s;
+
+    transform:scale(2);
+
+
+    box-shadow:
+
+    0 0 15px #f5f1e8,
+
+    0 0 40px rgba(245,241,232,.8);
+
 
 }
 
 
 
-.enter {
 
-    margin-top: 60px;
 
-    font-size: 14px;
+/* 点击后的状态 */
 
-    letter-spacing: 8px;
 
-    opacity: 0;
+.star.found{
 
-    animation: appear 2s forwards;
 
-    animation-delay: 9s;
+    opacity:1;
+
+
+    box-shadow:
+
+    0 0 20px #f5f1e8,
+
+    0 0 60px rgba(245,241,232,.9);
+
 
 }
 
 
 
-@keyframes appear {
 
 
-    from {
+/* 小熊座七颗星 */
 
-        opacity: 0;
+
+.star1{
+
+
+    left:35%;
+
+    top:35%;
+
+}
+
+
+
+.star2{
+
+
+    left:42%;
+
+    top:28%;
+
+}
+
+
+
+.star3{
+
+
+    left:50%;
+
+    top:25%;
+
+}
+
+
+
+.star4{
+
+
+    left:57%;
+
+    top:35%;
+
+}
+
+
+
+.star5{
+
+
+    left:45%;
+
+    top:45%;
+
+}
+
+
+
+.star6{
+
+
+    left:55%;
+
+    top:52%;
+
+}
+
+
+
+
+
+/* 北极星 */
+
+
+.polaris{
+
+
+    left:68%;
+
+
+    top:20%;
+
+
+    width:9px;
+
+
+    height:9px;
+
+
+    opacity:.85;
+
+
+    box-shadow:
+
+    0 0 20px #f5f1e8,
+
+    0 0 50px rgba(245,241,232,.5);
+
+
+}
+
+
+
+
+
+/* 星光呼吸 */
+
+
+@keyframes twinkle{
+
+
+    0%,100%{
+
+
+        opacity:.25;
 
     }
 
 
-    to {
 
-        opacity: 1;
+    50%{
+
+
+        opacity:.55;
 
     }
 
 
 }
+
+
+
+
+
+
+
+/* 中央文字 */
+
+
+.container{
+
+
+    height:100vh;
+
+
+    display:flex;
+
+
+    flex-direction:column;
+
+
+    justify-content:center;
+
+
+    align-items:center;
+
+
+    position:relative;
+
+
+    z-index:2;
+
+
+}
+
+
+
+
+
+.word{
+
+
+    font-size:80px;
+
+
+    letter-spacing:15px;
+
+
+    opacity:0;
+
+
+    animation:appear 2s forwards;
+
+
+}
+
+
+
+
+
+.love{
+
+
+    animation-delay:1s;
+
+
+}
+
+
+
+
+
+.know{
+
+
+    margin-top:80px;
+
+
+    animation-delay:4s;
+
+
+}
+
+
+
+
+
+.logo{
+
+
+    margin-top:120px;
+
+
+    font-size:35px;
+
+
+    letter-spacing:12px;
+
+
+    opacity:0;
+
+
+    animation:appear 2s forwards;
+
+
+    animation-delay:7s;
+
+
+}
+
+
+
+
+
+@keyframes appear{
+
+
+    from{
+
+
+        opacity:0;
+
+
+    }
+
+
+
+    to{
+
+
+        opacity:1;
+
+
+    }
+
+
+}
+
 
 
 </style>
@@ -139,45 +431,98 @@ body {
 
 
 
+
 <body>
+
+
+
+<div class="stars">
+
+
+<div class="star star1"></div>
+
+
+<div class="star star2"></div>
+
+
+<div class="star star3"></div>
+
+
+<div class="star star4"></div>
+
+
+<div class="star star5"></div>
+
+
+<div class="star star6"></div>
+
+
+
+<div class="star polaris"></div>
+
+
+</div>
+
+
 
 
 <div class="container">
 
 
-    <div class="word love">
+<div class="word love">
 
-        I LOVE
+I LOVE
 
-    </div>
-
-
-
-    <div class="word know">
-
-        I KNOW
-
-    </div>
+</div>
 
 
 
-    <div class="logo">
+<div class="word know">
 
-        QIN LAB
+I KNOW
 
-    </div>
+</div>
 
 
 
-    <div class="enter">
 
-        ENTER
+<div class="logo">
 
-    </div>
+QIN LAB
+
+</div>
 
 
 
 </div>
+
+
+
+
+
+<script>
+
+
+const stars = document.querySelectorAll(".star");
+
+
+stars.forEach(star=>{
+
+
+    star.addEventListener("click",()=>{
+
+
+        star.classList.add("found");
+
+
+    });
+
+
+});
+
+
+</script>
+
 
 
 </body>
