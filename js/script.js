@@ -91,4 +91,17 @@ polaris.addEventListener(
 
     document.body.classList.add("entering");
 
+
+    setTimeout(()=>{
+
+        window.location.href="home.html";
+
+    },3000);
+
+
 });
+()=>{
+
+    document.body.classList.add("entering");
+
+};
