@@ -1,3 +1,6 @@
+alert("JS RUNNING");
+
+
 const cursor = document.querySelector(".cursor");
 
 
