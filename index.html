@@ -1,13 +1,99 @@
 <!DOCTYPE html><br />
-<html><br /><br />
+<html lang="en"><br /><br />
 
 <head><br />
-    <title>Qin Lab</title><br />
-</head><br /><br />
+    <meta charset="UTF-8"><br />
+    <title>Qin Lab</title><br /><br />
+    <style>
+        <br/><br/>* {
+            <br/>margin: 0;
+            <br/>padding: 0;
+            <br/>box-sizing: border-box;
+            <br/>
+        }
 
-<body><br /><br />
-    <h1>QIN LAB</h1><br /><br />
-    <p>Fashion · Technology · Material Research</p><br /><br />
+        <br/><br/><br/>body {
+            <br/>background: #0b0b0b;
+            <br/>color: #f5f1e8;
+            <br/>font-family: "Times New Roman", serif;
+            <br/>height: 100vh;
+            <br/>overflow: hidden;
+            <br/>
+        }
+
+        <br/><br/><br/>.container {
+            <br/>height: 100vh;
+            <br/>display: flex;
+            <br/>flex-direction: column;
+            <br/>justify-content: center;
+            <br/>align-items: center;
+            <br/>
+        }
+
+        <br/><br/><br/>.word {
+            <br/>font-size: 80px;
+            <br/>letter-spacing: 15px;
+            <br/>opacity: 0;
+            <br/>animation: appear 2s forwards;
+            <br/>
+        }
+
+        <br/><br/><br/>.love {
+            <br/>animation-delay: 1s;
+            <br/>
+        }
+
+        <br/><br/><br/>.know {
+            <br/>margin-top: 80px;
+            <br/>animation-delay: 4s;
+            <br/>
+        }
+
+        <br/><br/><br/>.logo {
+            <br/>margin-top: 120px;
+            <br/>font-size: 35px;
+            <br/>letter-spacing: 12px;
+            <br/>opacity: 0;
+            <br/>animation: appear 2s forwards;
+            <br/>animation-delay: 7s;
+            <br/>
+        }
+
+        <br/><br/><br/>.enter {
+            <br/>margin-top: 60px;
+            <br/>font-size: 14px;
+            <br/>letter-spacing: 8px;
+            <br/>opacity: 0;
+            <br/>animation: appear 2s forwards;
+            <br/>animation-delay: 9s;
+            <br/>
+        }
+
+        <br/><br/><br/>@keyframes appear {
+            <br/><br/>from {
+                <br/>opacity: 0;
+                <br/>
+            }
+
+            <br/><br/>to {
+                <br/>opacity: 1;
+                <br/>
+            }
+
+            <br/><br/>
+        }
+
+        <br/><br/><br/>
+    </style><br /><br />
+</head><br /><br /><br />
+
+<body><br /><br /><br />
+    <div class="container"><br /><br />
+        <div class="word love"><br />I LOVE<br /></div><br /><br /><br />
+        <div class="word know"><br />I KNOW<br /></div><br /><br /><br />
+        <div class="logo"><br />QIN LAB<br /></div><br /><br /><br />
+        <div class="enter"><br />ENTER<br /></div><br /><br /><br />
+    </div><br /><br /><br />
 </body><br /><br />
 
 </html>
