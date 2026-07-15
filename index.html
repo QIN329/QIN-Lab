@@ -10,202 +10,158 @@
 
 <style>
 
-
 *{
-
     margin:0;
     padding:0;
     box-sizing:border-box;
-
 }
-
 
 
 body{
 
-
-    background:
-    radial-gradient(
-        circle at center,
-        #151515 0%,
-        #090909 45%,
-        #030303 100%
-    );
-
+    background:#050505;
 
     color:#f5f1e8;
 
-
     font-family:"Times New Roman", serif;
-
 
     height:100vh;
 
-
     overflow:hidden;
 
-
 }
-
-
 
 
 
 /* 星空 */
 
-
 .stars{
 
-
     position:absolute;
-
 
     width:100%;
 
-
     height:100%;
-
 
 }
 
 
 
-
+/* 星星 */
 
 .star{
 
-
     position:absolute;
 
+    width:6px;
 
-    width: 10px;
-
-
-    height: 10px;
-
+    height:6px;
 
     background:#f5f1e8;
 
-
     border-radius:50%;
 
-
-    opacity:0.35;
-
+    opacity:0.25;
 
     cursor:pointer;
 
-
-    transition:all .6s ease;
-
-
-    animation:twinkle 6s infinite ease-in-out;
-
+    transition:
+    opacity 0.6s ease,
+    transform 0.6s ease,
+    box-shadow 0.6s ease;
 
 }
 
 
 
-
-/* 鼠标靠近 */
-
-
-.star:hover{
-
-    opacity:1;
-
-    transform:scale(3);
-
-    box-shadow:
-
-    0 0 15px #f5f1e8,
-
-    0 0 35px rgba(245,241,232,0.8),
-
-    0 0 70px rgba(245,241,232,0.4);
-
-}
-
-
-
-
-/* 点击后的状态 */
-
+/* 被发现 */
 
 .star.found{
 
-
     opacity:1;
 
+    transform:scale(2);
 
     box-shadow:
 
     0 0 20px #f5f1e8,
 
-    0 0 60px rgba(245,241,232,.9);
-
+    0 0 50px #f5f1e8;
 
 }
 
 
 
-
-
-/* 小熊座七颗星 */
-
+/* 星星位置 */
 
 .star1{
-    left:42%;
-    top:38%;
+
+    left:35%;
+
+    top:40%;
+
 }
 
 
 .star2{
-    left:48%;
-    top:32%;
+
+    left:43%;
+
+    top:33%;
+
 }
 
 
 .star3{
-    left:55%;
+
+    left:52%;
+
     top:30%;
+
 }
 
 
 .star4{
-    left:62%;
-    top:35%;
+
+    left:60%;
+
+    top:38%;
+
 }
 
 
 .star5{
-    left:55%;
-    top:43%;
+
+    left:50%;
+
+    top:48%;
+
 }
 
 
 .star6{
-    left:62%;
-    top:50%;
+
+    left:60%;
+
+    top:55%;
+
 }
+
 
 
 /* 北极星 */
 
 .polaris{
 
-    left:55%;
+    left:52%;
 
     top:15%;
 
+    width:10px;
 
-    width:9px;
+    height:10px;
 
-    height:9px;
-
-
-    opacity:0.9;
-
+    opacity:0.7;
 
 }
 
@@ -213,169 +169,94 @@ body{
 
 
 
-/* 星光呼吸 */
-
-
-@keyframes twinkle{
-
-
-    0%,100%{
-
-
-        opacity:.25;
-
-    }
-
-
-
-    50%{
-
-
-        opacity:.55;
-
-    }
-
-
-}
-
-
-
-
-
-
-
-/* 中央文字 */
-
+/* 文字 */
 
 .container{
 
-
-    height:100vh;
-
-
-    display:flex;
-
-
-    flex-direction:column;
-
-
-    justify-content:center;
-
-
-    align-items:center;
-
-
     position:relative;
-
 
     z-index:2;
 
+    height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
 
 }
-
-
 
 
 
 .word{
 
-
     font-size:80px;
-
 
     letter-spacing:15px;
 
-
     opacity:0;
-
 
     animation:appear 2s forwards;
 
-
 }
-
-
 
 
 
 .love{
 
-
     animation-delay:1s;
 
-
 }
-
-
 
 
 
 .know{
 
-
     margin-top:80px;
-
 
     animation-delay:4s;
 
-
 }
-
-
 
 
 
 .logo{
 
-
     margin-top:120px;
-
 
     font-size:35px;
 
-
     letter-spacing:12px;
-
 
     opacity:0;
 
-
     animation:appear 2s forwards;
-
 
     animation-delay:7s;
 
-
 }
-
-
 
 
 
 @keyframes appear{
 
-
     from{
-
 
         opacity:0;
 
-
     }
-
 
 
     to{
 
-
         opacity:1;
-
 
     }
 
-
 }
-
 
 
 </style>
@@ -385,82 +266,56 @@ body{
 
 
 
-
 <body>
-
 
 
 <div class="stars">
 
+    <div class="star star1"></div>
 
-<div class="star star1"></div>
+    <div class="star star2"></div>
 
+    <div class="star star3"></div>
 
-<div class="star star2"></div>
+    <div class="star star4"></div>
 
+    <div class="star star5"></div>
 
-<div class="star star3"></div>
+    <div class="star star6"></div>
 
-
-<div class="star star4"></div>
-
-
-<div class="star star5"></div>
-
-
-<div class="star star6"></div>
-
-
-<div class="star polaris"></div>
-
-
-
-<svg class="constellation">
-
-    <line x1="42%" y1="38%" x2="48%" y2="32%"/>
-    <line x1="48%" y1="32%" x2="55%" y2="30%"/>
-    <line x1="55%" y1="30%" x2="62%" y2="35%"/>
-    <line x1="55%" y1="30%" x2="55%" y2="43%"/>
-    <line x1="55%" y1="43%" x2="62%" y2="50%"/>
-
-</svg>
-
+    <div class="star polaris"></div>
 
 </div>
-
 
 
 
 <div class="container">
 
 
-<div class="word love">
+    <div class="word love">
 
-I LOVE
+        I LOVE
 
-</div>
-
-
-
-<div class="word know">
-
-I KNOW
-
-</div>
+    </div>
 
 
 
+    <div class="word know">
 
-<div class="logo">
+        I KNOW
 
-QIN LAB
+    </div>
 
-</div>
 
+
+    <div class="logo">
+
+        QIN LAB
+
+    </div>
 
 
 </div>
-
 
 
 
@@ -468,19 +323,102 @@ QIN LAB
 <script>
 
 
-const stars = document.querySelectorAll(".star");
+const stars =
+document.querySelectorAll(".star");
+
+
+
+document.addEventListener(
+"mousemove",
+(e)=>{
 
 
 stars.forEach(star=>{
 
 
-    star.addEventListener("click",()=>{
+let rect =
+star.getBoundingClientRect();
 
 
-        star.classList.add("found");
+
+let starX =
+rect.left + rect.width/2;
 
 
-    });
+
+let starY =
+rect.top + rect.height/2;
+
+
+
+let distance =
+Math.sqrt(
+(e.clientX-starX)**2 +
+(e.clientY-starY)**2
+);
+
+
+
+if(distance < 150){
+
+
+let strength =
+1 - distance / 150;
+
+
+
+star.style.opacity =
+0.3 + strength * 0.7;
+
+
+
+star.style.transform =
+`scale(${1 + strength})`;
+
+
+
+star.style.boxShadow =
+`
+0 0 ${20*strength}px #f5f1e8
+`;
+
+
+
+}
+
+else if(!star.classList.contains("found")){
+
+
+star.style.opacity="0.25";
+
+star.style.transform="scale(1)";
+
+star.style.boxShadow="none";
+
+
+}
+
+
+});
+
+
+});
+
+
+
+
+stars.forEach(star=>{
+
+
+star.addEventListener(
+"click",
+()=>{
+
+
+star.classList.add("found");
+
+
+});
 
 
 });
@@ -489,8 +427,6 @@ stars.forEach(star=>{
 </script>
 
 
-
 </body>
-
 
 </html>
