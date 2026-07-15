@@ -23,7 +23,7 @@ body{
 
     color:#f5f1e8;
 
-    font-family:"Times New Roman", serif;
+    font-family:"Times New Roman",serif;
 
     height:100vh;
 
@@ -35,7 +35,7 @@ body{
 
 /* 星空 */
 
-.stars{
+.space{
 
     position:absolute;
 
@@ -47,34 +47,69 @@ body{
 
 
 
+svg{
+
+    position:absolute;
+
+    width:100%;
+
+    height:100%;
+
+    pointer-events:none;
+
+}
+
+
+
+line{
+
+    stroke:#f5f1e8;
+
+    stroke-width:0.5;
+
+    opacity:0.15;
+
+}
+
+
+
 /* 星星 */
 
 .star{
 
     position:absolute;
 
-    width:6px;
+    width:8px;
 
-    height:6px;
+    height:8px;
 
     background:#f5f1e8;
 
     border-radius:50%;
 
-    opacity:0.25;
+    opacity:0.35;
 
     cursor:pointer;
 
-    transition:
-    opacity 0.6s ease,
-    transform 0.6s ease,
-    box-shadow 0.6s ease;
+    transition:0.5s;
 
 }
 
 
 
-/* 被发现 */
+.star.near{
+
+    opacity:1;
+
+    transform:scale(1.8);
+
+    box-shadow:
+
+    0 0 20px #f5f1e8;
+
+}
+
+
 
 .star.found{
 
@@ -84,66 +119,75 @@ body{
 
     box-shadow:
 
-    0 0 20px #f5f1e8,
+    0 0 25px #f5f1e8,
 
-    0 0 50px #f5f1e8;
-
-}
-
-
-
-/* 星星位置 */
-
-.star1{
-
-    left:35%;
-
-    top:40%;
+    0 0 60px #f5f1e8;
 
 }
 
 
-.star2{
 
-    left:43%;
+/* 小熊座位置 */
 
-    top:33%;
+.s1{
+
+    left:40%;
+
+    top:42%;
 
 }
 
 
-.star3{
+.s2{
 
-    left:52%;
+    left:46%;
+
+    top:35%;
+
+}
+
+
+.s3{
+
+    left:53%;
 
     top:30%;
 
 }
 
 
-.star4{
+.s4{
 
-    left:60%;
+    left:61%;
 
-    top:38%;
+    top:33%;
 
 }
 
 
-.star5{
+.s5{
 
-    left:50%;
+    left:68%;
+
+    top:40%;
+
+}
+
+
+.s6{
+
+    left:60%;
+
+    top:50%;
+
+}
+
+
+.s7{
+
+    left:52%;
 
     top:48%;
-
-}
-
-
-.star6{
-
-    left:60%;
-
-    top:55%;
 
 }
 
@@ -153,19 +197,17 @@ body{
 
 .polaris{
 
-    left:52%;
+    left:53%;
 
-    top:15%;
+    top:18%;
 
-    width:10px;
+    width:12px;
 
-    height:10px;
+    height:12px;
 
-    opacity:0.7;
+    opacity:0.9;
 
 }
-
-
 
 
 
@@ -175,7 +217,7 @@ body{
 
     position:relative;
 
-    z-index:2;
+    z-index:5;
 
     height:100vh;
 
@@ -199,7 +241,7 @@ body{
 
     opacity:0;
 
-    animation:appear 2s forwards;
+    animation:show 2s forwards;
 
 }
 
@@ -233,7 +275,7 @@ body{
 
     opacity:0;
 
-    animation:appear 2s forwards;
+    animation:show 2s forwards;
 
     animation-delay:7s;
 
@@ -241,7 +283,7 @@ body{
 
 
 
-@keyframes appear{
+@keyframes show{
 
     from{
 
@@ -258,61 +300,79 @@ body{
 
 }
 
-
 </style>
 
-
 </head>
-
 
 
 <body>
 
 
-<div class="stars">
+<div class="space">
 
-    <div class="star star1"></div>
 
-    <div class="star star2"></div>
+<svg>
 
-    <div class="star star3"></div>
+<line x1="40%" y1="42%" x2="46%" y2="35%"/>
 
-    <div class="star star4"></div>
+<line x1="46%" y1="35%" x2="53%" y2="30%"/>
 
-    <div class="star star5"></div>
+<line x1="53%" y1="30%" x2="61%" y2="33%"/>
 
-    <div class="star star6"></div>
+<line x1="61%" y1="33%" x2="68%" y2="40%"/>
 
-    <div class="star polaris"></div>
+<line x1="68%" y1="40%" x2="60%" y2="50%"/>
+
+<line x1="60%" y1="50%" x2="52%" y2="48%"/>
+
+</svg>
+
+
+
+<div class="star s1"></div>
+
+<div class="star s2"></div>
+
+<div class="star s3"></div>
+
+<div class="star s4"></div>
+
+<div class="star s5"></div>
+
+<div class="star s6"></div>
+
+<div class="star s7"></div>
+
+<div class="star polaris"></div>
+
 
 </div>
+
 
 
 
 <div class="container">
 
 
-    <div class="word love">
+<div class="word love">
 
-        I LOVE
+I LOVE
 
-    </div>
-
-
-
-    <div class="word know">
-
-        I KNOW
-
-    </div>
+</div>
 
 
+<div class="word know">
 
-    <div class="logo">
+I KNOW
 
-        QIN LAB
+</div>
 
-    </div>
+
+<div class="logo">
+
+QIN LAB
+
+</div>
 
 
 </div>
@@ -322,79 +382,41 @@ body{
 
 <script>
 
-
-const stars =
-document.querySelectorAll(".star");
-
+const stars = document.querySelectorAll(".star");
 
 
 document.addEventListener(
 "mousemove",
 (e)=>{
 
-
 stars.forEach(star=>{
 
 
-let rect =
-star.getBoundingClientRect();
+let box = star.getBoundingClientRect();
 
 
-
-let starX =
-rect.left + rect.width/2;
+let x = box.left + box.width/2;
 
 
-
-let starY =
-rect.top + rect.height/2;
+let y = box.top + box.height/2;
 
 
-
-let distance =
-Math.sqrt(
-(e.clientX-starX)**2 +
-(e.clientY-starY)**2
+let distance = Math.sqrt(
+(e.clientX-x)**2+
+(e.clientY-y)**2
 );
 
 
 
-if(distance < 150){
+if(distance < 120){
 
-
-let strength =
-1 - distance / 150;
-
-
-
-star.style.opacity =
-0.3 + strength * 0.7;
-
-
-
-star.style.transform =
-`scale(${1 + strength})`;
-
-
-
-star.style.boxShadow =
-`
-0 0 ${20*strength}px #f5f1e8
-`;
-
-
+    star.classList.add("near");
 
 }
 
 else if(!star.classList.contains("found")){
 
-
-star.style.opacity="0.25";
-
-star.style.transform="scale(1)";
-
-star.style.boxShadow="none";
-
+    star.classList.remove("near");
 
 }
 
@@ -410,15 +432,11 @@ star.style.boxShadow="none";
 stars.forEach(star=>{
 
 
-star.addEventListener(
-"click",
-()=>{
+star.onclick=()=>{
 
+    star.classList.add("found");
 
-star.classList.add("found");
-
-
-});
+};
 
 
 });
