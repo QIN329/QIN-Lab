@@ -85,23 +85,23 @@ stars.forEach(star=>{
 const polaris = document.querySelector(".polaris");
 
 
-polaris.addEventListener(
-"click",
-()=>{
+if(polaris){
 
-    document.body.classList.add("entering");
-
-
-    setTimeout(()=>{
-
-        window.location.href="home.html";
-
-    },3000);
+    polaris.addEventListener(
+    "click",
+    ()=>{
 
 
-});
-()=>{
+        document.body.classList.add("entering");
 
-    document.body.classList.add("entering");
 
-};
+        setTimeout(()=>{
+
+            window.location.href="home.html";
+
+        },3000);
+
+
+    });
+
+}
