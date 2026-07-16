@@ -1,35 +1,54 @@
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+
+margin:0;
+
+padding:0;
+
+box-sizing:border-box;
+
 }
 
 
 body{
 
-    width:100vw;
-    height:100vh;
 
-    overflow:hidden;
+width:100vw;
 
-    background:
-    radial-gradient(
-        circle at center,
-        #182c58,
-        #050814 55%,
-        #000
-    );
+height:100vh;
 
-    color:white;
 
-    font-family:
-    "Times New Roman",
-    serif;
+overflow:hidden;
 
-    cursor:none;
+
+background:
+
+radial-gradient(
+
+circle at center,
+
+#1a315c,
+
+#050817 55%,
+
+#000
+
+);
+
+
+color:white;
+
+
+font-family:
+
+"Times New Roman",
+
+serif;
+
+
+cursor:none;
+
 
 }
-
 
 
 /* =================
@@ -39,35 +58,50 @@ body{
 
 body::before{
 
-    content:"";
 
-    position:absolute;
-
-    width:120%;
-
-    height:60%;
-
-    top:-20%;
-
-    left:-10%;
+content:"";
 
 
-    background:
-
-    linear-gradient(
-        120deg,
-        transparent,
-        rgba(80,255,220,.15),
-        rgba(80,120,255,.2),
-        transparent
-    );
+position:absolute;
 
 
-    filter:blur(60px);
+width:140%;
 
 
-    animation:
-    aurora 12s infinite alternate;
+height:70%;
+
+
+top:-30%;
+
+
+left:-20%;
+
+
+background:
+
+linear-gradient(
+
+120deg,
+
+transparent,
+
+rgba(50,255,210,.18),
+
+rgba(100,120,255,.25),
+
+transparent
+
+);
+
+
+filter:blur(80px);
+
+
+
+animation:
+
+aurora 15s infinite alternate;
+
 
 
 }
@@ -77,78 +111,97 @@ body::before{
 @keyframes aurora{
 
 
-0%{
+from{
 
-    transform:
-    translateX(-10%)
-    rotate(-5deg);
+transform:
 
-}
+translateX(-8%)
 
-
-
-100%{
-
-    transform:
-    translateX(10%)
-    rotate(5deg);
+rotate(-5deg);
 
 }
 
 
+
+to{
+
+transform:
+
+translateX(8%)
+
+rotate(5deg);
+
 }
 
 
+}
 
 
 
 /* =================
-文字
+中心文字
 ================= */
 
 
 #intro{
 
-    position:absolute;
 
-    left:12%;
-
-    top:40%;
+position:absolute;
 
 
-    z-index:5;
+left:50%;
+
+
+top:50%;
+
+
+transform:
+
+translate(-50%,-50%);
+
+
+text-align:center;
+
+
+z-index:10;
+
 
 }
 
 
 
-.love,
+.love{
+
+
+font-size:80px;
+
+
+letter-spacing:30px;
+
+
+}
+
+
+
 .know{
 
-    font-size:70px;
 
-    letter-spacing:25px;
+margin-top:20px;
 
-    opacity:.85;
+
+font-size:55px;
+
+
+letter-spacing:25px;
+
+
+opacity:.65;
+
+
+font-style:italic;
+
 
 }
-
-
-
-.know{
-
-    margin-left:100px;
-
-    margin-top:20px;
-
-    font-style:italic;
-
-    opacity:.6;
-
-}
-
-
-
 
 
 
@@ -160,28 +213,44 @@ body::before{
 
 #space{
 
-    position:absolute;
 
-    width:100%;
+position:absolute;
 
-    height:100%;
+
+width:100%;
+
+
+height:100%;
+
 
 }
 
 
 
+
+
 .stars{
 
-    position:absolute;
 
-    width:500px;
-
-    height:400px;
+position:absolute;
 
 
-    left:65%;
+left:50%;
 
-    top:45%;
+
+top:50%;
+
+
+width:600px;
+
+
+height:500px;
+
+
+transform:
+
+translate(-50%,-50%);
+
 
 
 }
@@ -192,42 +261,50 @@ body::before{
 
 .star{
 
-    position:absolute;
 
-    width:10px;
-
-    height:10px;
+position:absolute;
 
 
-    background:white;
-
-    border-radius:50%;
+width:10px;
 
 
-    box-shadow:
-
-    0 0 15px white,
-
-    0 0 35px #79b9ff;
+height:10px;
 
 
-    transition:.4s;
+background:white;
 
 
-    cursor:none;
+border-radius:50%;
+
+
+box-shadow:
+
+0 0 20px white,
+
+0 0 50px #7dbaff;
+
+
+cursor:none;
+
+
+transition:.4s;
+
+
 
 }
+
 
 
 
 
 .star:hover{
 
-    transform:scale(2);
+
+transform:scale(1.8);
+
+
 
 }
-
-
 
 
 
@@ -237,20 +314,29 @@ body::before{
 
 .polaris{
 
-    width:18px;
 
-    height:18px;
+width:18px;
 
 
-    box-shadow:
+height:18px;
 
-    0 0 30px white,
 
-    0 0 80px #70baff;
+left:80px;
+
+
+top:40px;
+
+
+box-shadow:
+
+
+0 0 30px white,
+
+0 0 90px #8bc7ff;
+
 
 
 }
-
 
 
 
@@ -258,77 +344,101 @@ body::before{
 /* 小熊座 */
 
 
-.polaris{
-
-    left:80px;
-
-    top:40px;
-
-}
-
-
-
 .s1{
 
-    left:160px;
+left:160px;
 
-    top:70px;
+top:70px;
 
 }
-
 
 
 .s2{
 
-    left:240px;
+left:240px;
 
-    top:100px;
+top:110px;
 
 }
-
 
 
 .s3{
 
-    left:320px;
+left:320px;
 
-    top:150px;
+top:150px;
 
 }
-
 
 
 .s4{
 
-    left:250px;
+left:250px;
 
-    top:220px;
+top:230px;
 
 }
-
 
 
 .s5{
 
-    left:170px;
+left:170px;
 
-    top:250px;
+top:270px;
 
 }
-
 
 
 .s6{
 
-    left:100px;
+left:100px;
 
-    top:190px;
+top:210px;
 
 }
 
 
 
 
+
+/* =================
+星星鼠标
+================= */
+
+
+#cursorStar{
+
+
+position:absolute;
+
+
+width:14px;
+
+
+height:14px;
+
+
+border-radius:50%;
+
+
+background:white;
+
+
+box-shadow:
+
+
+0 0 20px white,
+
+0 0 40px #7dbaff;
+
+
+pointer-events:none;
+
+
+z-index:999;
+
+
+}
 
 
 
@@ -340,18 +450,26 @@ body::before{
 
 #rainFloor{
 
-    position:absolute;
 
-    bottom:0;
+position:absolute;
 
-    width:100%;
 
-    height:25%;
+bottom:0;
 
-    overflow:hidden;
+
+width:100%;
+
+
+height:25%;
+
+
+overflow:hidden;
+
+
+z-index:3;
+
 
 }
-
 
 
 
@@ -359,30 +477,31 @@ body::before{
 .rainRipple{
 
 
-    position:absolute;
+position:absolute;
 
 
-    bottom:30px;
+bottom:30px;
 
 
-    width:15px;
+width:15px;
 
 
-    height:15px;
+height:15px;
 
 
-    border-radius:50%;
+border-radius:50%;
 
 
-    border:
+border:
 
-    1px solid rgba(180,220,255,.5);
+1px solid rgba(180,220,255,.6);
 
 
 
-    animation:
+animation:
 
-    dropRipple 3s linear;
+ripple 3s linear forwards;
+
 
 
 }
@@ -391,54 +510,80 @@ body::before{
 
 
 
-@keyframes dropRipple{
+@keyframes ripple{
 
 
 0%{
 
 
-    transform:scale(.3);
+transform:scale(.2);
 
 
-    opacity:.8;
+opacity:.8;
 
 
 }
 
+
+
+50%{
+
+
+opacity:.4;
+
+
+}
 
 
 
 100%{
 
 
-    transform:scale(5);
+transform:scale(8);
 
 
-    opacity:0;
-
-
-}
+opacity:0;
 
 
 }
 
 
 
+}
 
 
 
 
 /* =================
-星轨状态
+进入星轨
 ================= */
 
 
 .galaxy-transition{
 
 
-    animation:
+animation:
 
-    spaceWarp 3s forwards;
+warp 5s forwards;
+
+
+
+}
+
+
+
+
+@keyframes warp{
+
+
+from{
+
+
+filter:brightness(1);
+
+
+transform:scale(1);
+
 
 
 }
@@ -446,32 +591,18 @@ body::before{
 
 
 
-@keyframes spaceWarp{
+to{
 
 
-0%{
+filter:brightness(8);
 
 
-    filter:brightness(1);
+transform:scale(8);
 
-
-    transform:scale(1);
 
 
 }
 
-
-
-100%{
-
-
-    filter:brightness(5);
-
-
-    transform:scale(5);
-
-
-}
 
 
 }
@@ -479,103 +610,84 @@ body::before{
 
 
 
+/* 文字轨道化 */
 
 
+.orbitText{
 
 
-/* =================
-自定义星星鼠标
-================= */
+animation:
 
-
-#cursorStar{
-
-
-    position:absolute;
-
-
-    width:15px;
-
-
-    height:15px;
-
-
-
-    background:white;
-
-
-
-    border-radius:50%;
-
-
-
-    box-shadow:
-
-
-    0 0 20px white,
-
-    0 0 40px #80caff;
-
-
-
-    pointer-events:none;
-
-
-
-    z-index:999;
+textOrbit 4s forwards;
 
 
 
 }
 
-/* =================
-星星繁衍
-================= */
 
 
-.childStar{
-
-    position:absolute;
-
-    width:8px;
-
-    height:8px;
 
 
-    background:white;
+@keyframes textOrbit{
 
 
-    border-radius:50%;
+from{
 
 
-    box-shadow:
+transform:
 
-    0 0 20px white,
+translate(-50%,-50%)
 
-    0 0 40px #79baff;
+scale(1);
+
 
 
 }
 
 
 
-.starBirth{
+
+to{
+
+
+transform:
+
+translate(-50%,-50%)
+
+scale(.3)
+
+rotate(720deg);
+
+
+
+opacity:0;
+
+
+
+}
+
+
+
+}
+
+body.galaxy-transition{
 
     animation:
-
-    birth 1s;
-
+    warpTunnel 3s forwards;
 
 }
 
 
 
-@keyframes birth{
-
+@keyframes warpTunnel{
 
     0%{
 
-        transform:scale(1);
+        filter:
+        brightness(1);
+
+        transform:
+        scale(1);
 
     }
 
@@ -583,17 +695,8 @@ body::before{
 
     50%{
 
-
-        transform:scale(4);
-
-
-
-        box-shadow:
-
-        0 0 80px white,
-
-        0 0 150px #7dbdff;
-
+        filter:
+        brightness(5);
 
     }
 
@@ -601,65 +704,14 @@ body::before{
 
     100%{
 
-
-        transform:scale(1);
-
-
-    }
-
-
-}
-
-
-
-
-
-.orbit{
-
-
-    animation:
-
-    orbitMove 4s linear infinite;
-
-
-}
-
-
-
-
-
-@keyframes orbitMove{
-
-
-    from{
-
+        filter:
+        brightness(10);
 
         transform:
+        scale(15);
 
-        rotate(0deg)
-
-        translateX(120px)
-
-        rotate(0deg);
-
+        opacity:0;
 
     }
-
-
-
-    to{
-
-
-        transform:
-
-        rotate(360deg)
-
-        translateX(120px)
-
-        rotate(-360deg);
-
-
-    }
-
 
 }

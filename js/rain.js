@@ -1,41 +1,75 @@
-const floor = document.getElementById("rainFloor");
-
-
-function createRipple(){
-
-    const ripple = document.createElement("div");
-
-
-    ripple.className = "rainRipple";
-
-
-    ripple.style.left =
-    Math.random() * 100 + "%";
-
-
-    ripple.style.bottom =
-    Math.random() * 80 + "px";
-
-
-    floor.appendChild(ripple);
+const floor =
+document.getElementById(
+"rainFloor"
+);
 
 
 
-    setTimeout(()=>{
+function createRain(){
 
-        ripple.remove();
 
-    },3000);
+let x =
+Math.random()*100;
+
+
+
+for(let i=0;i<4;i++){
+
+
+
+let ripple =
+document.createElement(
+"div"
+);
+
+
+
+ripple.className =
+"rainRipple";
+
+
+
+ripple.style.left =
+x+"%";
+
+
+
+ripple.style.bottom =
+Math.random()*80+"px";
+
+
+
+ripple.style.animationDelay =
+(i*0.15)+"s";
+
+
+
+floor.appendChild(
+ripple
+);
+
+
+
+setTimeout(()=>{
+
+
+ripple.remove();
+
+
+},3000);
+
+
 
 }
 
 
 
-if(floor){
-
-    setInterval(
-        createRipple,
-        350
-    );
-
 }
+
+
+
+
+setInterval(
+createRain,
+600
+);

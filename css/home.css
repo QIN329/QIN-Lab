@@ -1,55 +1,323 @@
-body{
+*{
 
-    margin:0;
+margin:0;
 
-    height:100vh;
+padding:0;
 
-    background:
-    linear-gradient(
-        135deg,
-        #071426,
-        #19385f
-    );
-
-    color:white;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-
-    font-family:"Times New Roman";
+box-sizing:border-box;
 
 }
+
+
+
+body{
+
+
+width:100vw;
+
+height:100vh;
+
+
+overflow:hidden;
+
+
+background:
+
+
+radial-gradient(
+
+circle at center,
+
+#243d72,
+
+#050817 60%,
+
+#000
+
+);
+
+
+
+color:white;
+
+
+font-family:
+
+"Times New Roman",
+
+serif;
+
+
+}
+
+
+
+
+
+body::before{
+
+
+content:"";
+
+
+position:absolute;
+
+
+width:100%;
+
+
+height:100%;
+
+
+background:
+
+
+radial-gradient(
+
+circle,
+
+transparent,
+
+rgba(100,150,255,.15)
+
+);
+
+
+
+animation:
+
+pulse 8s infinite alternate;
+
+
+
+}
+
+
+
+
+
+@keyframes pulse{
+
+
+from{
+
+
+opacity:.3;
+
+
+}
+
+
+
+to{
+
+
+opacity:.8;
+
+
+}
+
+
+}
+
+
+
 
 
 
 .home{
 
-    text-align:center;
+
+position:absolute;
+
+
+width:100%;
+
+
+height:100%;
+
+
+display:flex;
+
+
+flex-direction:column;
+
+
+justify-content:center;
+
+
+align-items:center;
+
+
+text-align:center;
+
 
 }
 
 
 
-h1{
 
-    font-size:80px;
 
-    letter-spacing:20px;
+
+
+.logo{
+
+
+font-size:100px;
+
+
+letter-spacing:40px;
+
+
+animation:
+
+appear 3s;
+
 
 }
 
 
 
-p{
 
-    font-size:20px;
 
-    opacity:.7;
 
-    letter-spacing:5px;
+
+.subtitle{
+
+
+margin-top:40px;
+
+
+font-size:25px;
+
+
+letter-spacing:12px;
+
+
+opacity:.7;
+
+
+}
+
+
+
+
+
+
+
+.menu{
+
+
+display:flex;
+
+
+gap:50px;
+
+
+margin-top:100px;
+
+
+}
+
+
+
+
+
+
+
+.item{
+
+
+font-size:18px;
+
+
+letter-spacing:8px;
+
+
+padding:20px;
+
+
+border-bottom:
+
+1px solid rgba(255,255,255,.4);
+
+
+
+transition:.5s;
+
+
+cursor:pointer;
+
+
+}
+
+
+
+
+
+
+
+.item:hover{
+
+
+transform:
+
+translateY(-10px);
+
+
+
+text-shadow:
+
+0 0 20px white;
+
+
+}
+
+
+
+
+
+
+
+@keyframes appear{
+
+
+from{
+
+
+opacity:0;
+
+
+transform:
+
+scale(.5);
+
+
+
+filter:blur(20px);
+
+
+}
+
+
+
+to{
+
+
+opacity:1;
+
+
+transform:
+
+scale(1);
+
+
+
+filter:blur(0);
+
+
+}
+
+
 
 }

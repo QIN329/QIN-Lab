@@ -1,44 +1,61 @@
-const polaris = document.getElementById("polaris");
-
-
-let entered = false;
-
-
-
-if(polaris){
-
-
-    polaris.addEventListener(
-        "click",
-        ()=>{
-
-
-            if(entered) return;
-
-
-            entered = true;
+const polaris =
+document.getElementById(
+"polaris"
+);
 
 
 
-            document.body.classList.add(
-                "galaxy-transition"
-            );
+let enter=false;
 
 
 
-            setTimeout(()=>{
+polaris.addEventListener(
+"click",
+()=>{
 
 
-                window.location.href =
-                "home.html";
+if(enter)
 
-
-            },4000);
+return;
 
 
 
-        }
-    );
+enter=true;
 
 
-}
+
+
+// 开始宇宙收缩
+
+setTimeout(()=>{
+
+
+document.body.classList.add(
+"galaxy-transition"
+);
+
+
+
+},3000);
+
+
+
+
+
+
+
+// 进入下一页
+
+setTimeout(()=>{
+
+
+window.location.href =
+"home.html";
+
+
+
+},5500);
+
+
+
+});

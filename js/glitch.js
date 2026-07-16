@@ -1,26 +1,68 @@
-const errorBox = document.getElementById("errorBox");
-
-
-const normalStars = document.querySelectorAll(
-    ".s1,.s2,.s3,.s4,.s5,.s6"
+const polaris =
+document.getElementById(
+"polaris"
 );
 
 
 
-normalStars.forEach(star => {
+const intro =
+document.getElementById(
+"intro"
+);
 
 
-    star.onclick = ()=>{
+
+const stars =
+document.querySelector(
+".stars"
+);
 
 
-        if(errorBox){
 
-            errorBox.classList.add("show");
-
-        }
+let activated=false;
 
 
-    };
+
+polaris.addEventListener(
+"click",
+()=>{
+
+
+if(activated)
+
+return;
+
+
+
+activated=true;
+
+
+
+// 文字进入轨道状态
+
+intro.classList.add(
+"orbitText"
+);
+
+
+
+// 生成环绕文字的星轨
+
+createOrbit();
+
+
+
+setTimeout(()=>{
+
+
+document.body.classList.add(
+"galaxy-transition"
+);
+
+
+
+},3500);
+
 
 
 });
@@ -29,19 +71,48 @@ normalStars.forEach(star => {
 
 
 
-const recover = document.getElementById("recover");
 
 
-if(recover){
+function createOrbit(){
 
 
-    recover.onclick = ()=>{
+
+for(let i=0;i<18;i++){
 
 
-        errorBox.classList.remove("show");
+
+let star =
+document.createElement(
+"div"
+);
 
 
-    };
+
+star.className =
+"orbitStar";
+
+
+
+let angle =
+(i/18)*360;
+
+
+
+star.style.setProperty(
+"--angle",
+angle+"deg"
+);
+
+
+
+stars.appendChild(
+star
+);
+
+
+
+}
+
 
 
 }
