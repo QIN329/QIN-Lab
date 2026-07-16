@@ -12,7 +12,13 @@ body{
 
     overflow:hidden;
 
-    background:#02040d;
+    background:
+    radial-gradient(
+        circle at center,
+        #182c58,
+        #050814 55%,
+        #000
+    );
 
     color:white;
 
@@ -20,12 +26,84 @@ body{
     "Times New Roman",
     serif;
 
+    cursor:none;
+
 }
 
 
 
 /* =================
-   开场文字
+极光
+================= */
+
+
+body::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:120%;
+
+    height:60%;
+
+    top:-20%;
+
+    left:-10%;
+
+
+    background:
+
+    linear-gradient(
+        120deg,
+        transparent,
+        rgba(80,255,220,.15),
+        rgba(80,120,255,.2),
+        transparent
+    );
+
+
+    filter:blur(60px);
+
+
+    animation:
+    aurora 12s infinite alternate;
+
+
+}
+
+
+
+@keyframes aurora{
+
+
+0%{
+
+    transform:
+    translateX(-10%)
+    rotate(-5deg);
+
+}
+
+
+
+100%{
+
+    transform:
+    translateX(10%)
+    rotate(5deg);
+
+}
+
+
+}
+
+
+
+
+
+/* =================
+文字
 ================= */
 
 
@@ -33,17 +111,12 @@ body{
 
     position:absolute;
 
-    width:100%;
-    height:100%;
+    left:12%;
 
-    display:flex;
+    top:40%;
 
-    justify-content:center;
-    align-items:center;
 
-    background:black;
-
-    z-index:10;
+    z-index:5;
 
 }
 
@@ -52,22 +125,11 @@ body{
 .love,
 .know{
 
-    position:absolute;
-
     font-size:70px;
 
-    letter-spacing:20px;
+    letter-spacing:25px;
 
-    opacity:0;
-
-}
-
-
-
-.love{
-
-    animation:
-    loveShow 4s forwards;
+    opacity:.85;
 
 }
 
@@ -75,267 +137,24 @@ body{
 
 .know{
 
-    animation:
-    knowShow 4s forwards;
+    margin-left:100px;
 
-    animation-delay:4s;
+    margin-top:20px;
 
-}
+    font-style:italic;
 
-
-
-
-@keyframes loveShow{
-
-0%{
-
-opacity:0;
-
-filter:blur(20px);
+    opacity:.6;
 
 }
 
 
-30%{
-
-opacity:1;
-
-filter:blur(0);
-
-}
-
-
-80%{
-
-opacity:1;
-
-}
-
-
-100%{
-
-opacity:0;
-
-}
-
-}
-
-
-
-
-@keyframes knowShow{
-
-
-0%{
-
-opacity:0;
-
-}
-
-
-30%{
-
-opacity:1;
-
-}
-
-
-80%{
-
-opacity:1;
-
-}
-
-
-100%{
-
-opacity:0;
-
-}
-
-
-}
 
 
 
 
 
 /* =================
-月球观察
-================= */
-
-
-#moon{
-
-
-position:absolute;
-
-width:100%;
-
-height:100%;
-
-
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-flex-direction:column;
-
-
-
-opacity:0;
-
-
-
-animation:
-
-moonAppear 3s forwards;
-
-
-
-animation-delay:8s;
-
-
-}
-
-
-
-
-@keyframes moonAppear{
-
-
-from{
-
-opacity:0;
-
-}
-
-
-
-to{
-
-opacity:1;
-
-}
-
-
-}
-
-
-
-
-.lens{
-
-
-width:280px;
-
-height:280px;
-
-
-
-border-radius:50%;
-
-
-
-border:
-
-2px solid rgba(255,255,255,.4);
-
-
-
-overflow:hidden;
-
-
-
-box-shadow:
-
-0 0 80px rgba(120,160,255,.5);
-
-
-}
-
-
-
-
-
-.moon-surface{
-
-
-width:100%;
-
-height:100%;
-
-
-
-background:
-
-radial-gradient(
-
-circle at 40% 40%,
-
-#aaa,
-
-#555,
-
-#111
-
-);
-
-
-
-animation:
-
-moonMove 10s infinite alternate;
-
-
-}
-
-
-
-
-@keyframes moonMove{
-
-
-from{
-
-transform:scale(1);
-
-}
-
-
-
-to{
-
-transform:scale(1.2);
-
-}
-
-
-}
-
-
-
-
-#moon p{
-
-
-margin-top:40px;
-
-
-letter-spacing:10px;
-
-
-opacity:.6;
-
-
-}
-
-
-/* =================
- 星空
+星空
 ================= */
 
 
@@ -347,53 +166,8 @@ opacity:.6;
 
     height:100%;
 
-
-    background:
-
-    radial-gradient(
-
-    circle at center,
-
-    #17294f,
-
-    #030713 70%
-
-    );
-
-
-    opacity:0;
-
-
-    animation:
-
-    spaceShow 3s forwards;
-
-
-    animation-delay:12s;
-
 }
 
-
-
-
-
-@keyframes spaceShow{
-
-    to{
-
-        opacity:1;
-
-    }
-
-}
-
-
-
-
-
-/* =================
- 小熊座
-================= */
 
 
 .stars{
@@ -405,14 +179,10 @@ opacity:.6;
     height:400px;
 
 
-    left:50%;
+    left:65%;
 
-    top:50%;
+    top:45%;
 
-
-    transform:
-
-    translate(-50%,-50%);
 
 }
 
@@ -424,45 +194,36 @@ opacity:.6;
 
     position:absolute;
 
+    width:10px;
 
-    width:12px;
-
-    height:12px;
+    height:10px;
 
 
     background:white;
 
-
     border-radius:50%;
-
 
 
     box-shadow:
 
-
     0 0 15px white,
 
-    0 0 35px #8bbcff;
+    0 0 35px #79b9ff;
 
 
-
-    cursor:pointer;
-
+    transition:.4s;
 
 
-    transition:.5s;
+    cursor:none;
 
 }
 
 
 
 
-
 .star:hover{
 
-
     transform:scale(2);
-
 
 }
 
@@ -476,27 +237,16 @@ opacity:.6;
 
 .polaris{
 
-
     width:18px;
 
     height:18px;
 
 
-
-    background:#fff;
-
-
-
     box-shadow:
-
 
     0 0 30px white,
 
-    0 0 70px #78b7ff;
-
-
-
-    cursor:pointer;
+    0 0 80px #70baff;
 
 
 }
@@ -505,32 +255,16 @@ opacity:.6;
 
 
 
-.polaris:hover{
-
-
-    transform:scale(2.5);
-
-
-}
-
-
-
-
-
-/*
-小熊座勺子结构
-*/
-
+/* 小熊座 */
 
 
 .polaris{
 
     left:80px;
 
-    top:60px;
+    top:40px;
 
 }
-
 
 
 
@@ -538,7 +272,7 @@ opacity:.6;
 
     left:160px;
 
-    top:90px;
+    top:70px;
 
 }
 
@@ -548,7 +282,7 @@ opacity:.6;
 
     left:240px;
 
-    top:120px;
+    top:100px;
 
 }
 
@@ -558,7 +292,7 @@ opacity:.6;
 
     left:320px;
 
-    top:170px;
+    top:150px;
 
 }
 
@@ -568,7 +302,7 @@ opacity:.6;
 
     left:250px;
 
-    top:230px;
+    top:220px;
 
 }
 
@@ -578,7 +312,7 @@ opacity:.6;
 
     left:170px;
 
-    top:260px;
+    top:250px;
 
 }
 
@@ -588,9 +322,10 @@ opacity:.6;
 
     left:100px;
 
-    top:210px;
+    top:190px;
 
 }
+
 
 
 
@@ -599,58 +334,55 @@ opacity:.6;
 
 
 /* =================
- 水面波纹
+底部雨滴水面
 ================= */
 
 
-#wave{
+#rainFloor{
+
+    position:absolute;
+
+    bottom:0;
+
+    width:100%;
+
+    height:25%;
+
+    overflow:hidden;
+
+}
+
+
+
+
+
+.rainRipple{
 
 
     position:absolute;
 
 
-    left:50%;
+    bottom:30px;
 
 
-    top:55%;
+    width:15px;
 
 
-
-    width:30px;
-
-
-    height:30px;
-
+    height:15px;
 
 
     border-radius:50%;
 
 
-
     border:
 
+    1px solid rgba(180,220,255,.5);
 
-    1px solid rgba(255,255,255,.5);
-
-
-
-    opacity:0;
-
-
-}
-
-
-
-
-
-
-.ripple{
 
 
     animation:
 
-
-    ripple 2s ease-out;
+    dropRipple 3s linear;
 
 
 }
@@ -659,17 +391,13 @@ opacity:.6;
 
 
 
+@keyframes dropRipple{
 
 
-@keyframes ripple{
+0%{
 
 
-from{
-
-
-    width:30px;
-
-    height:30px;
+    transform:scale(.3);
 
 
     opacity:.8;
@@ -680,14 +408,10 @@ from{
 
 
 
-to{
+100%{
 
 
-    width:500px;
-
-
-    height:500px;
-
+    transform:scale(5);
 
 
     opacity:0;
@@ -696,113 +420,6 @@ to{
 }
 
 
-
-}
-
-
-
-
-
-/* =================
- glitch窗口
-================= */
-
-
-
-#errorBox{
-
-
-    position:absolute;
-
-
-    display:none;
-
-
-    left:50%;
-
-
-    top:50%;
-
-
-
-    transform:
-
-    translate(-50%,-50%);
-
-
-
-    z-index:20;
-
-
-}
-
-
-
-
-
-.window{
-
-
-    width:350px;
-
-
-    background:#111;
-
-
-    border:1px solid white;
-
-
-
-    padding:20px;
-
-
-
-    box-shadow:
-
-
-    0 0 40px #7db9ff;
-
-
-}
-
-
-
-
-.bar{
-
-
-    background:#333;
-
-
-    padding:10px;
-
-
-}
-
-
-
-
-
-button{
-
-
-    margin-top:20px;
-
-
-    padding:10px 30px;
-
-
-
-    background:white;
-
-
-    border:none;
-
-
-
-    cursor:pointer;
-
-
 }
 
 
@@ -812,18 +429,16 @@ button{
 
 
 /* =================
-进入穿越
+星轨状态
 ================= */
 
 
-
-.warp{
+.galaxy-transition{
 
 
     animation:
 
-
-    travel 1.5s forwards;
+    spaceWarp 3s forwards;
 
 
 }
@@ -831,8 +446,7 @@ button{
 
 
 
-
-@keyframes travel{
+@keyframes spaceWarp{
 
 
 0%{
@@ -851,13 +465,64 @@ button{
 100%{
 
 
-    filter:brightness(8);
+    filter:brightness(5);
 
 
-    transform:scale(20);
+    transform:scale(5);
 
 
 }
+
+
+}
+
+
+
+
+
+
+
+
+/* =================
+自定义星星鼠标
+================= */
+
+
+#cursorStar{
+
+
+    position:absolute;
+
+
+    width:15px;
+
+
+    height:15px;
+
+
+
+    background:white;
+
+
+
+    border-radius:50%;
+
+
+
+    box-shadow:
+
+
+    0 0 20px white,
+
+    0 0 40px #80caff;
+
+
+
+    pointer-events:none;
+
+
+
+    z-index:999;
 
 
 
