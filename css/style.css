@@ -4,6 +4,7 @@
     box-sizing:border-box;
 }
 
+
 body{
 
     width:100vw;
@@ -11,195 +12,853 @@ body{
 
     overflow:hidden;
 
-    background:
-    radial-gradient(circle at center,
-    #18284f,
-    #050816 60%,
-    #000000);
+    background:#02040d;
 
     color:white;
 
-    font-family:"Times New Roman",serif;
+    font-family:
+    "Times New Roman",
+    serif;
 
 }
 
-.space{
+
+
+/* =================
+   开场文字
+================= */
+
+
+#intro{
+
+    position:absolute;
 
     width:100%;
     height:100%;
 
     display:flex;
 
-    flex-direction:column;
-
     justify-content:center;
-
     align-items:center;
 
-}
+    background:black;
 
-/* 小熊座 */
-
-.constellation{
-
-    position:relative;
-
-    width:350px;
-    height:250px;
+    z-index:10;
 
 }
 
-/* 普通星星 */
 
-.star,
-#polaris{
+
+.love,
+.know{
 
     position:absolute;
 
-    width:10px;
-    height:10px;
+    font-size:70px;
 
-    border-radius:50%;
+    letter-spacing:20px;
+
+    opacity:0;
+
+}
+
+
+
+.love{
+
+    animation:
+    loveShow 4s forwards;
+
+}
+
+
+
+.know{
+
+    animation:
+    knowShow 4s forwards;
+
+    animation-delay:4s;
+
+}
+
+
+
+
+@keyframes loveShow{
+
+0%{
+
+opacity:0;
+
+filter:blur(20px);
+
+}
+
+
+30%{
+
+opacity:1;
+
+filter:blur(0);
+
+}
+
+
+80%{
+
+opacity:1;
+
+}
+
+
+100%{
+
+opacity:0;
+
+}
+
+}
+
+
+
+
+@keyframes knowShow{
+
+
+0%{
+
+opacity:0;
+
+}
+
+
+30%{
+
+opacity:1;
+
+}
+
+
+80%{
+
+opacity:1;
+
+}
+
+
+100%{
+
+opacity:0;
+
+}
+
+
+}
+
+
+
+
+
+/* =================
+月球观察
+================= */
+
+
+#moon{
+
+
+position:absolute;
+
+width:100%;
+
+height:100%;
+
+
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+flex-direction:column;
+
+
+
+opacity:0;
+
+
+
+animation:
+
+moonAppear 3s forwards;
+
+
+
+animation-delay:8s;
+
+
+}
+
+
+
+
+@keyframes moonAppear{
+
+
+from{
+
+opacity:0;
+
+}
+
+
+
+to{
+
+opacity:1;
+
+}
+
+
+}
+
+
+
+
+.lens{
+
+
+width:280px;
+
+height:280px;
+
+
+
+border-radius:50%;
+
+
+
+border:
+
+2px solid rgba(255,255,255,.4);
+
+
+
+overflow:hidden;
+
+
+
+box-shadow:
+
+0 0 80px rgba(120,160,255,.5);
+
+
+}
+
+
+
+
+
+.moon-surface{
+
+
+width:100%;
+
+height:100%;
+
+
+
+background:
+
+radial-gradient(
+
+circle at 40% 40%,
+
+#aaa,
+
+#555,
+
+#111
+
+);
+
+
+
+animation:
+
+moonMove 10s infinite alternate;
+
+
+}
+
+
+
+
+@keyframes moonMove{
+
+
+from{
+
+transform:scale(1);
+
+}
+
+
+
+to{
+
+transform:scale(1.2);
+
+}
+
+
+}
+
+
+
+
+#moon p{
+
+
+margin-top:40px;
+
+
+letter-spacing:10px;
+
+
+opacity:.6;
+
+
+}
+
+
+/* =================
+ 星空
+================= */
+
+
+#space{
+
+    position:absolute;
+
+    width:100%;
+
+    height:100%;
+
+
+    background:
+
+    radial-gradient(
+
+    circle at center,
+
+    #17294f,
+
+    #030713 70%
+
+    );
+
+
+    opacity:0;
+
+
+    animation:
+
+    spaceShow 3s forwards;
+
+
+    animation-delay:12s;
+
+}
+
+
+
+
+
+@keyframes spaceShow{
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+
+
+
+
+/* =================
+ 小熊座
+================= */
+
+
+.stars{
+
+    position:absolute;
+
+    width:500px;
+
+    height:400px;
+
+
+    left:50%;
+
+    top:50%;
+
+
+    transform:
+
+    translate(-50%,-50%);
+
+}
+
+
+
+
+
+.star{
+
+    position:absolute;
+
+
+    width:12px;
+
+    height:12px;
+
 
     background:white;
 
+
+    border-radius:50%;
+
+
+
     box-shadow:
-    0 0 10px white,
-    0 0 20px white;
+
+
+    0 0 15px white,
+
+    0 0 35px #8bbcff;
+
+
+
+    cursor:pointer;
+
+
 
     transition:.5s;
 
 }
 
-/* 小熊座七颗星 */
 
-.star1{
-    left:50px;
-    top:80px;
-}
 
-.star2{
-    left:110px;
-    top:50px;
-}
 
-.star3{
-    left:170px;
-    top:40px;
-}
 
-.star4{
-    left:230px;
-    top:80px;
-}
+.star:hover{
 
-.star5{
-    left:270px;
-    top:130px;
-}
-
-.star6{
-    left:150px;
-    top:170px;
-}
-
-/* 北极星 */
-
-#polaris{
-
-    left:80px;
-    top:10px;
-
-    width:16px;
-    height:16px;
-
-    background:#ffffff;
-
-    cursor:pointer;
-
-}
-
-#polaris:hover{
 
     transform:scale(2);
 
+
+}
+
+
+
+
+
+
+/* 北极星 */
+
+
+.polaris{
+
+
+    width:18px;
+
+    height:18px;
+
+
+
+    background:#fff;
+
+
+
     box-shadow:
-    0 0 20px white,
-    0 0 50px #7db9ff,
-    0 0 80px #7db9ff;
+
+
+    0 0 30px white,
+
+    0 0 70px #78b7ff;
+
+
+
+    cursor:pointer;
+
 
 }
 
-/* 标题 */
 
-.title{
 
-    margin-top:50px;
 
-    font-size:60px;
 
-    letter-spacing:20px;
+.polaris:hover{
+
+
+    transform:scale(2.5);
+
 
 }
 
-.title span{
 
-    display:inline-block;
+
+
+
+/*
+小熊座勺子结构
+*/
+
+
+
+.polaris{
+
+    left:80px;
+
+    top:60px;
+
+}
+
+
+
+
+.s1{
+
+    left:160px;
+
+    top:90px;
+
+}
+
+
+
+.s2{
+
+    left:240px;
+
+    top:120px;
+
+}
+
+
+
+.s3{
+
+    left:320px;
+
+    top:170px;
+
+}
+
+
+
+.s4{
+
+    left:250px;
+
+    top:230px;
+
+}
+
+
+
+.s5{
+
+    left:170px;
+
+    top:260px;
+
+}
+
+
+
+.s6{
+
+    left:100px;
+
+    top:210px;
+
+}
+
+
+
+
+
+
+
+/* =================
+ 水面波纹
+================= */
+
+
+#wave{
+
+
+    position:absolute;
+
+
+    left:50%;
+
+
+    top:55%;
+
+
+
+    width:30px;
+
+
+    height:30px;
+
+
+
+    border-radius:50%;
+
+
+
+    border:
+
+
+    1px solid rgba(255,255,255,.5);
+
+
+
+    opacity:0;
+
+
+}
+
+
+
+
+
+
+.ripple{
+
 
     animation:
-    float 3s infinite alternate;
+
+
+    ripple 2s ease-out;
+
 
 }
 
-@keyframes float{
 
-    from{
-        transform:translateY(0);
-    }
 
-    to{
-        transform:translateY(-10px);
-    }
+
+
+
+
+@keyframes ripple{
+
+
+from{
+
+
+    width:30px;
+
+    height:30px;
+
+
+    opacity:.8;
+
+
+}
+
+
+
+
+to{
+
+
+    width:500px;
+
+
+    height:500px;
+
+
+
+    opacity:0;
+
 
 }
 
-.hint{
 
-    margin-top:30px;
-
-    opacity:.6;
-
-    font-size:18px;
-
-    letter-spacing:5px;
 
 }
+
+
+
+
+
+/* =================
+ glitch窗口
+================= */
+
+
+
+#errorBox{
+
+
+    position:absolute;
+
+
+    display:none;
+
+
+    left:50%;
+
+
+    top:50%;
+
+
+
+    transform:
+
+    translate(-50%,-50%);
+
+
+
+    z-index:20;
+
+
+}
+
+
+
+
+
+.window{
+
+
+    width:350px;
+
+
+    background:#111;
+
+
+    border:1px solid white;
+
+
+
+    padding:20px;
+
+
+
+    box-shadow:
+
+
+    0 0 40px #7db9ff;
+
+
+}
+
+
+
+
+.bar{
+
+
+    background:#333;
+
+
+    padding:10px;
+
+
+}
+
+
+
+
+
+button{
+
+
+    margin-top:20px;
+
+
+    padding:10px 30px;
+
+
+
+    background:white;
+
+
+    border:none;
+
+
+
+    cursor:pointer;
+
+
+}
+
+
+
+
+
+
+
+/* =================
+进入穿越
+================= */
+
+
 
 .warp{
 
+
     animation:
+
+
     travel 1.5s forwards;
 
+
 }
+
+
+
 
 
 @keyframes travel{
 
-    0%{
 
-        filter:brightness(1);
-
-        transform:scale(1);
-
-    }
+0%{
 
 
-    100%{
+    filter:brightness(1);
 
-        filter:brightness(8);
 
-        transform:scale(20);
+    transform:scale(1);
 
-    }
+
+}
+
+
+
+100%{
+
+
+    filter:brightness(8);
+
+
+    transform:scale(20);
+
+
+}
+
+
 
 }

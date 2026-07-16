@@ -1,48 +1,465 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-<meta charset="UTF-8">
-<title>QIN LAB</title>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-<link rel="stylesheet" href="css/style.css">
 
-</head>
+body{
 
-<body>
+    width:100vw;
+    height:100vh;
 
-<div class="space">
+    overflow:hidden;
 
-    <div class="constellation">
+    background:
+    radial-gradient(
+        circle at center,
+        #18284f,
+        #050816 60%,
+        #000000
+    );
 
-        <div class="star star1"></div>
-        <div class="star star2"></div>
-        <div class="star star3"></div>
-        <div class="star star4"></div>
-        <div class="star star5"></div>
-        <div class="star star6"></div>
+    color:white;
 
-        <div id="polaris"></div>
+    font-family:"Times New Roman",serif;
 
-    </div>
+}
 
-    <div class="title">
-        <span>Q</span>
-        <span>I</span>
-        <span>N</span>
-        <span> </span>
-        <span>L</span>
-        <span>A</span>
-        <span>B</span>
-    </div>
 
-    <p class="hint">
-        Find your Polaris
-    </p>
 
-</div>
+/* 星空主体 */
 
-<script src="js/stars.js"></script>
-<script src="js/transition.js"></script>
+#space{
 
-</body>
-</html>
+    width:100%;
+    height:100%;
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+
+
+/* 星星区域 */
+
+.stars{
+
+    position:absolute;
+
+    width:350px;
+    height:250px;
+
+    left:50%;
+    top:40%;
+
+    transform:translate(-50%,-50%);
+
+}
+
+
+
+/* 所有星星 */
+
+.star{
+
+    position:absolute;
+
+    width:10px;
+    height:10px;
+
+    border-radius:50%;
+
+    background:white;
+
+    box-shadow:
+    0 0 10px white,
+    0 0 25px #7db9ff;
+
+    transition:.5s;
+
+}
+
+
+
+/* 鼠标靠近 */
+
+.star:hover{
+
+    transform:scale(2);
+
+    box-shadow:
+    0 0 30px white,
+    0 0 60px #7db9ff;
+
+}
+
+
+
+/* 小熊座 */
+
+.s1{
+
+    left:50px;
+    top:80px;
+
+}
+
+
+.s2{
+
+    left:110px;
+    top:50px;
+
+}
+
+
+.s3{
+
+    left:170px;
+    top:40px;
+
+}
+
+
+.s4{
+
+    left:230px;
+    top:80px;
+
+}
+
+
+.s5{
+
+    left:270px;
+    top:130px;
+
+}
+
+
+.s6{
+
+    left:150px;
+    top:170px;
+
+}
+
+
+
+/* 北极星 */
+
+.polaris{
+
+    width:18px;
+    height:18px;
+
+    left:80px;
+    top:10px;
+
+    background:white;
+
+    cursor:pointer;
+
+
+    box-shadow:
+
+    0 0 20px white,
+    0 0 60px #7db9ff;
+
+}
+
+
+
+.polaris:hover{
+
+    transform:scale(2.5);
+
+
+    box-shadow:
+
+    0 0 30px white,
+    0 0 100px #7db9ff;
+
+}
+
+
+
+/* 开场文字 */
+
+#intro{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    transform:
+    translate(-50%,-50%);
+
+    text-align:center;
+
+    z-index:5;
+
+}
+
+
+
+.love,
+.know{
+
+    font-size:80px;
+
+    letter-spacing:20px;
+
+}
+
+
+
+.know{
+
+    margin-top:40px;
+
+}
+
+
+
+/* 月球 */
+
+#moon{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    transform:
+    translate(-50%,-50%);
+
+    text-align:center;
+
+    opacity:0;
+
+}
+
+
+
+.lens{
+
+    width:180px;
+    height:180px;
+
+    border-radius:50%;
+
+    overflow:hidden;
+
+
+    box-shadow:
+
+    0 0 40px white;
+
+}
+
+
+
+.moon-surface{
+
+    width:100%;
+    height:100%;
+
+    background:
+
+    radial-gradient(
+        circle,
+        #ddd,
+        #777,
+        #222
+    );
+
+}
+
+
+
+#moon p{
+
+    margin-top:20px;
+
+    letter-spacing:8px;
+
+}
+
+
+
+/* 标题 */
+
+.title{
+
+    position:absolute;
+
+    bottom:120px;
+
+    left:50%;
+
+    transform:
+    translateX(-50%);
+
+
+    font-size:70px;
+
+    letter-spacing:25px;
+
+}
+
+
+
+/* 提示文字 */
+
+.hint{
+
+    position:absolute;
+
+    bottom:70px;
+
+    left:50%;
+
+    transform:
+    translateX(-50%);
+
+
+    opacity:.6;
+
+    letter-spacing:8px;
+
+}
+
+
+
+/* 水波 */
+
+#wave{
+
+    position:absolute;
+
+    left:50%;
+    bottom:-200px;
+
+    width:700px;
+    height:300px;
+
+    border-radius:50%;
+
+
+    background:
+
+    radial-gradient(
+        transparent,
+        rgba(100,200,255,.25)
+    );
+
+
+    transform:
+    translateX(-50%);
+
+}
+
+
+
+/* glitch窗口 */
+
+#errorBox{
+
+    position:absolute;
+
+    display:none;
+
+    left:50%;
+    top:50%;
+
+    transform:
+    translate(-50%,-50%);
+
+}
+
+
+
+.window{
+
+    width:350px;
+
+    background:#111;
+
+    border:1px solid white;
+
+    padding:20px;
+
+    box-shadow:
+
+    0 0 40px #7db9ff;
+
+}
+
+
+
+.bar{
+
+    background:#333;
+
+    padding:10px;
+
+}
+
+
+
+button{
+
+    margin-top:20px;
+
+    padding:10px 30px;
+
+    background:white;
+
+    border:none;
+
+    cursor:pointer;
+
+}
+
+
+
+/* 转场 */
+
+.warp{
+
+    animation:
+
+    travel 1.5s forwards;
+
+}
+
+
+
+@keyframes travel{
+
+
+0%{
+
+    filter:brightness(1);
+
+    transform:scale(1);
+
+}
+
+
+
+100%{
+
+    filter:brightness(8);
+
+    transform:scale(20);
+
+}
+
+
+}

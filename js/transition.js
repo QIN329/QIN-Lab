@@ -1,13 +1,22 @@
 const polaris = document.getElementById("polaris");
 
-polaris.onclick = function(){
 
-    document.body.classList.add("warp");
+if(polaris){
 
-    setTimeout(()=>{
+    polaris.onclick = ()=>{
 
-        window.location.href = "home.html";
+        document.body.classList.add(
+            "galaxy-transition"
+        );
 
-    },1500);
 
-};
+        setTimeout(()=>{
+
+            window.location.href = "home.html";
+
+        },3000);
+
+
+    };
+
+}
