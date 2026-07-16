@@ -1,0 +1,55 @@
+body{
+
+    margin:0;
+
+    height:100vh;
+
+    background:
+    linear-gradient(
+        135deg,
+        #071426,
+        #19385f
+    );
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+
+    font-family:"Times New Roman";
+
+}
+
+
+
+.home{
+
+    text-align:center;
+
+}
+
+
+
+h1{
+
+    font-size:80px;
+
+    letter-spacing:20px;
+
+}
+
+
+
+p{
+
+    font-size:20px;
+
+    opacity:.7;
+
+    letter-spacing:5px;
+
+}
