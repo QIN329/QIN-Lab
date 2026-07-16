@@ -1,465 +1,173 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+<!DOCTYPE html>
+<html lang="zh-CN">
 
+<head>
 
-body{
+<meta charset="UTF-8">
 
-    width:100vw;
-    height:100vh;
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    overflow:hidden;
+<title>QIN LAB</title>
 
-    background:
-    radial-gradient(
-        circle at center,
-        #18284f,
-        #050816 60%,
-        #000000
-    );
 
-    color:white;
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/glitch.css">
 
-    font-family:"Times New Roman",serif;
 
-}
+</head>
 
 
+<body>
 
-/* 星空主体 */
 
-#space{
+<!-- 开场文字 -->
 
-    width:100%;
-    height:100%;
+<div id="intro">
 
-    position:relative;
+    <div class="love">
+        I LOVE
+    </div>
 
-    overflow:hidden;
 
-}
+    <div class="know">
+        I KNOW
+    </div>
 
+</div>
 
 
-/* 星星区域 */
 
-.stars{
+<!-- 月球探索界面 -->
 
-    position:absolute;
+<div id="moon">
 
-    width:350px;
-    height:250px;
+    <div class="lens">
 
-    left:50%;
-    top:40%;
+        <div class="moon-surface">
 
-    transform:translate(-50%,-50%);
+        </div>
 
-}
+    </div>
 
 
+    <p>
+        LOOK BEYOND
+    </p>
 
-/* 所有星星 */
 
-.star{
+</div>
 
-    position:absolute;
 
-    width:10px;
-    height:10px;
 
-    border-radius:50%;
 
-    background:white;
 
-    box-shadow:
-    0 0 10px white,
-    0 0 25px #7db9ff;
+<!-- 星空区域 -->
 
-    transition:.5s;
+<div id="space">
 
-}
 
+    <div class="stars">
 
 
-/* 鼠标靠近 */
+        <!-- 北极星 -->
 
-.star:hover{
+        <div class="star polaris" id="polaris"></div>
 
-    transform:scale(2);
 
-    box-shadow:
-    0 0 30px white,
-    0 0 60px #7db9ff;
 
-}
+        <!-- 小熊座 -->
 
+        <div class="star s1"></div>
 
+        <div class="star s2"></div>
 
-/* 小熊座 */
+        <div class="star s3"></div>
 
-.s1{
+        <div class="star s4"></div>
 
-    left:50px;
-    top:80px;
+        <div class="star s5"></div>
 
-}
+        <div class="star s6"></div>
 
 
-.s2{
+    </div>
 
-    left:110px;
-    top:50px;
 
-}
 
 
-.s3{
 
-    left:170px;
-    top:40px;
+    <!-- 水面波纹 -->
 
-}
+    <div id="wave"></div>
 
 
-.s4{
 
-    left:230px;
-    top:80px;
 
-}
 
 
-.s5{
+    <!-- glitch窗口 -->
 
-    left:270px;
-    top:130px;
 
-}
+    <div id="errorBox">
 
 
-.s6{
+        <div class="window">
 
-    left:150px;
-    top:170px;
 
-}
+            <div class="bar">
 
+                QIN.exe
 
+            </div>
 
-/* 北极星 */
 
-.polaris{
 
-    width:18px;
-    height:18px;
+            <p>
+                SYSTEM ERROR
+            </p>
 
-    left:80px;
-    top:10px;
 
-    background:white;
+            <p>
+                Unknown Memory Found
+            </p>
 
-    cursor:pointer;
 
 
-    box-shadow:
+            <button id="recover">
 
-    0 0 20px white,
-    0 0 60px #7db9ff;
+                RECOVER
 
-}
+            </button>
 
 
+        </div>
 
-.polaris:hover{
 
-    transform:scale(2.5);
+    </div>
 
 
-    box-shadow:
 
-    0 0 30px white,
-    0 0 100px #7db9ff;
 
-}
+</div>
 
 
 
-/* 开场文字 */
 
-#intro{
 
-    position:absolute;
 
-    left:50%;
-    top:50%;
 
-    transform:
-    translate(-50%,-50%);
+<script src="js/intro.js"></script>
 
-    text-align:center;
+<script src="js/wave.js"></script>
 
-    z-index:5;
+<script src="js/stars.js"></script>
 
-}
+<script src="js/glitch.js"></script>
 
+<script src="js/transition.js"></script>
 
 
-.love,
-.know{
 
-    font-size:80px;
+</body>
 
-    letter-spacing:20px;
-
-}
-
-
-
-.know{
-
-    margin-top:40px;
-
-}
-
-
-
-/* 月球 */
-
-#moon{
-
-    position:absolute;
-
-    left:50%;
-    top:50%;
-
-    transform:
-    translate(-50%,-50%);
-
-    text-align:center;
-
-    opacity:0;
-
-}
-
-
-
-.lens{
-
-    width:180px;
-    height:180px;
-
-    border-radius:50%;
-
-    overflow:hidden;
-
-
-    box-shadow:
-
-    0 0 40px white;
-
-}
-
-
-
-.moon-surface{
-
-    width:100%;
-    height:100%;
-
-    background:
-
-    radial-gradient(
-        circle,
-        #ddd,
-        #777,
-        #222
-    );
-
-}
-
-
-
-#moon p{
-
-    margin-top:20px;
-
-    letter-spacing:8px;
-
-}
-
-
-
-/* 标题 */
-
-.title{
-
-    position:absolute;
-
-    bottom:120px;
-
-    left:50%;
-
-    transform:
-    translateX(-50%);
-
-
-    font-size:70px;
-
-    letter-spacing:25px;
-
-}
-
-
-
-/* 提示文字 */
-
-.hint{
-
-    position:absolute;
-
-    bottom:70px;
-
-    left:50%;
-
-    transform:
-    translateX(-50%);
-
-
-    opacity:.6;
-
-    letter-spacing:8px;
-
-}
-
-
-
-/* 水波 */
-
-#wave{
-
-    position:absolute;
-
-    left:50%;
-    bottom:-200px;
-
-    width:700px;
-    height:300px;
-
-    border-radius:50%;
-
-
-    background:
-
-    radial-gradient(
-        transparent,
-        rgba(100,200,255,.25)
-    );
-
-
-    transform:
-    translateX(-50%);
-
-}
-
-
-
-/* glitch窗口 */
-
-#errorBox{
-
-    position:absolute;
-
-    display:none;
-
-    left:50%;
-    top:50%;
-
-    transform:
-    translate(-50%,-50%);
-
-}
-
-
-
-.window{
-
-    width:350px;
-
-    background:#111;
-
-    border:1px solid white;
-
-    padding:20px;
-
-    box-shadow:
-
-    0 0 40px #7db9ff;
-
-}
-
-
-
-.bar{
-
-    background:#333;
-
-    padding:10px;
-
-}
-
-
-
-button{
-
-    margin-top:20px;
-
-    padding:10px 30px;
-
-    background:white;
-
-    border:none;
-
-    cursor:pointer;
-
-}
-
-
-
-/* 转场 */
-
-.warp{
-
-    animation:
-
-    travel 1.5s forwards;
-
-}
-
-
-
-@keyframes travel{
-
-
-0%{
-
-    filter:brightness(1);
-
-    transform:scale(1);
-
-}
-
-
-
-100%{
-
-    filter:brightness(8);
-
-    transform:scale(20);
-
-}
-
-
-}
+</html>
