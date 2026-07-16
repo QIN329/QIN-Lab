@@ -4,7 +4,6 @@
     box-sizing:border-box;
 }
 
-
 body{
 
     width:100vw;
@@ -12,369 +11,366 @@ body{
 
     overflow:hidden;
 
-    background:#02050c;
+    background:#020817;
 
-    color:#f5f1e8;
+    color:white;
 
-    font-family:"Times New Roman",serif;
-
-    cursor:none;
-
-}
-
-
-
-.cursor{
-
-    position:fixed;
-
-    width:8px;
-
-    height:8px;
-
-    border-radius:50%;
-
-    background:#f5f1e8;
-
-    pointer-events:none;
-
-    z-index:100;
-
-    transform:translate(-50%,-50%);
-
-    box-shadow:
-
-    0 0 15px #9ddcff;
+    font-family:
+    "Times New Roman",
+    serif;
 
 }
-
-
 
 .universe{
 
-    background: radial-gradient(
-        circle at center,
-        #101722 0%,
-        #050810 50%,
-        #02050c 100%
+    position:relative;
+
+    width:100vw;
+    height:100vh;
+
+    overflow:hidden;
+
+}
+
+.nebula{
+
+    position:absolute;
+
+    width:120%;
+    height:120%;
+
+    left:-10%;
+    top:-10%;
+
+    background:
+
+    radial-gradient(
+    circle at 30% 40%,
+    rgba(70,160,255,.25),
+    transparent 35%
+    ),
+
+    radial-gradient(
+    circle at 70% 60%,
+    rgba(20,100,200,.25),
+    transparent 40%
     );
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: #f5f1e8;
+    animation:
+
+    nebulaMove 18s infinite alternate ease-in-out;
 
 }
 
-
-
-.constellation line{
-
-    stroke:#8bcfff;
-
-    stroke-width:1;
-
-    opacity:0.12;
-
-}
-
-
-
-.star{
-
-    position:absolute;
-
-    width:7px;
-
-    height:7px;
-
-    border-radius:50%;
-
-    background:#fff8e7;
-
-    opacity:.35;
-
-    transition:.5s ease;
-
-}
-
-
-
-.star.near{
-
-    opacity:1;
-
-    transform:scale(2);
-
-    box-shadow:
-
-    0 0 15px #ffffff,
-
-    0 0 40px #79cfff;
-
-}
-
-
-
-.star.found{
-
-    opacity:1;
-
-    transform:scale(2.5);
-
-    box-shadow:
-
-    0 0 25px #fff,
-
-    0 0 80px #4db8ff;
-
-}
-
-
-
-.s1{
-
-    left:40%;
-
-    top:42%;
-
-}
-
-
-
-.s2{
-
-    left:47%;
-
-    top:36%;
-
-}
-
-
-
-.s3{
-
-    left:55%;
-
-    top:33%;
-
-}
-
-
-
-.s4{
-
-    left:64%;
-
-    top:36%;
-
-}
-
-
-
-.s5{
-
-    left:70%;
-
-    top:43%;
-
-}
-
-
-
-.s6{
-
-    left:61%;
-
-    top:50%;
-
-}
-
-
-
-.s7{
-
-    left:52%;
-
-    top:47%;
-
-}
-
-
-
-.polaris{
-
-    left:55%;
-
-    top:18%;
-
-    width:12px;
-
-    height:12px;
-
-    opacity:.9;
-
-    box-shadow:
-
-    0 0 20px #fff,
-
-    0 0 60px #65cfff;
-
-}
-
-
-
-.opening{
-
-    position:absolute;
-
-    width:100%;
-
-    height:100%;
-
-    display:flex;
-
-    flex-direction:column;
-
-    align-items:center;
-
-    justify-content:center;
-
-    z-index:5;
-
-}
-
-
-
-.word{
-
-    font-size:80px;
-
-    letter-spacing:18px;
-
-    opacity:0;
-
-}
-
-
-
-.love{
-
-    animation:fadeIn 3s forwards;
-
-    animation-delay:1s;
-
-}
-
-
-
-.know{
-
-    margin-top:80px;
-
-    animation:fadeIn 3s forwards;
-
-    animation-delay:4s;
-
-}
-
-
-
-.logo{
-
-    position:absolute;
-
-    bottom:12%;
-
-    width:100%;
-
-    text-align:center;
-
-    font-size:36px;
-
-    letter-spacing:15px;
-
-    opacity:0;
-
-    animation:fadeIn 3s forwards;
-
-    animation-delay:7s;
-
-    z-index:5;
-
-}
-
-
-
-@keyframes fadeIn{
-
+@keyframes nebulaMove{
 
 from{
 
-    opacity:0;
-
-    transform:translateY(20px);
+transform:
+translate(-3%,-2%)
+scale(1);
 
 }
-
-
 
 to{
 
-    opacity:1;
-
-    transform:translateY(0);
-
-}
-
-
-.home{
-
-    height:100vh;
-
-    background：
-    radial-gradient（
-        circle at center,
-        #101722 0%,
-        #050810 50%,
-        #02050c 100%
-    ）;
-
-    display:flex；
-
-    flex-direction:column；
-
-    justify-content:center；
-
-    align-items:center；
-
-    color：#f5f1e8；
+transform:
+translate(3%,2%)
+scale(1.15);
 
 }
 
+}
 
+.aurora{
 
-.home h1{
+position:absolute;
 
-    font-size:60px;
+width:160%;
 
-    letter-spacing:25px;
+height:50%;
 
-    font-weight:400;
+left:-30%;
+
+top:-10%;
+
+background:
+
+linear-gradient(
+90deg,
+transparent,
+rgba(70,180,255,.18),
+transparent
+);
+
+filter:blur(60px);
+
+animation:
+
+auroraMove 12s infinite alternate;
 
 }
 
+@keyframes auroraMove{
 
+from{
 
-.home p{
+transform:
+rotate(-10deg)
+translateX(-10%);
 
-    margin-top:45px;
+}
 
-    font-size:16px;
+to{
 
-    letter-spacing:8px;
+transform:
+rotate(10deg)
+translateX(10%);
 
-    opacity:.65;
+}
+
+}
+
+.shell{
+
+position:absolute;
+
+width:20px;
+
+height:20px;
+
+background:
+
+radial-gradient(
+circle at 30% 30%,
+#ffffff,
+#7ecfff 50%,
+#24598a
+);
+
+border-radius:
+
+70% 30% 60% 40%;
+
+box-shadow:
+
+0 0 20px rgba(120,210,255,.8);
+
+transition:.5s;
+
+cursor:none;
+
+}
+
+.shell.near{
+
+transform:
+
+scale(2);
+
+box-shadow:
+
+0 0 60px white;
+
+}
+
+.polaris{
+
+left:50%;
+
+top:25%;
+
+width:35px;
+
+height:35px;
+
+background:
+
+radial-gradient(
+circle,
+white,
+#9edcff,
+#3979c8
+);
+
+box-shadow:
+
+0 0 30px white,
+
+0 0 80px #4db8ff;
+
+animation:
+
+polarisGlow 3s infinite;
+
+}
+
+@keyframes polarisGlow{
+
+0%,100%{
+
+transform:scale(1);
+
+}
+
+50%{
+
+transform:scale(1.15);
+
+}
+
+}
+
+.s1{
+
+left:38%;
+
+top:55%;
+
+}
+
+.s2{
+
+left:45%;
+
+top:45%;
+
+}
+
+.s3{
+
+left:55%;
+
+top:40%;
+
+}
+
+.s4{
+
+left:65%;
+
+top:45%;
+
+}
+
+.s5{
+
+left:70%;
+
+top:55%;
+
+}
+
+.s6{
+
+left:58%;
+
+top:65%;
+
+}
+
+.opening{
+
+position:absolute;
+
+top:50%;
+
+left:50%;
+
+transform:
+
+translate(-50%,-50%);
+
+text-align:center;
+
+}
+
+.word{
+
+font-size:35px;
+
+letter-spacing:15px;
+
+opacity:.9;
+
+}
+
+.know{
+
+margin-top:30px;
+
+}
+
+.cursor{
+
+position:absolute;
+
+width:16px;
+
+height:16px;
+
+border-radius:50%;
+
+background:#bdefff;
+
+box-shadow:
+
+0 0 20px #8bdcff;
+
+pointer-events:none;
+
+z-index:10;
+
+}
+
+.text-galaxy span{
+
+position:absolute;
+
+font-size:45px;
+
+letter-spacing:12px;
+
+opacity:0;
+
+}
+
+body.entering .text-galaxy span{
+
+animation:
+
+galaxy 5s forwards;
+
+}
+
+@keyframes galaxy{
+
+0%{
+
+opacity:0;
+
+transform:
+
+scale(.2)
+rotate(0deg);
+
+}
+
+40%{
+
+opacity:1;
+
+}
+
+100%{
+
+opacity:0;
+
+transform:
+
+scale(8)
+rotate(720deg);
+
+}
 
 }

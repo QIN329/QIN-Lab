@@ -1,6 +1,3 @@
-alert("JS RUNNING");
-
-
 const cursor = document.querySelector(".cursor");
 
 
@@ -8,15 +5,18 @@ document.addEventListener(
 "mousemove",
 (e)=>{
 
-    cursor.style.left = e.clientX + "px";
+    cursor.style.left =
+    e.clientX + "px";
 
-    cursor.style.top = e.clientY + "px";
+    cursor.style.top =
+    e.clientY + "px";
 
 });
 
 
 
-const stars = document.querySelectorAll(".star");
+const shells =
+document.querySelectorAll(".shell");
 
 
 document.addEventListener(
@@ -24,37 +24,40 @@ document.addEventListener(
 (e)=>{
 
 
-    stars.forEach(star=>{
+    shells.forEach(shell=>{
 
 
-        const rect = star.getBoundingClientRect();
+        const rect =
+        shell.getBoundingClientRect();
 
 
-        const starX = rect.left + rect.width / 2;
+        const x =
+        rect.left + rect.width / 2;
 
 
-        const starY = rect.top + rect.height / 2;
+        const y =
+        rect.top + rect.height / 2;
 
 
-        const distance = Math.sqrt(
+        const distance =
+        Math.sqrt(
 
-            (e.clientX-starX)**2 +
+        (e.clientX-x)**2 +
 
-            (e.clientY-starY)**2
+        (e.clientY-y)**2
 
         );
 
 
+        if(distance < 120){
 
-        if(distance < 130){
-
-            star.classList.add("near");
+            shell.classList.add("near");
 
         }
 
-        else if(!star.classList.contains("found")){
+        else{
 
-            star.classList.remove("near");
+            shell.classList.remove("near");
 
         }
 
@@ -67,25 +70,12 @@ document.addEventListener(
 
 
 
-stars.forEach(star=>{
+const polaris =
+document.querySelector(".polaris");
 
 
-    star.addEventListener(
-    "click",
-    ()=>{
-
-        star.classList.add("found");
-
-    });
-
-
-});
-
-
-
-
-
-const polaris = document.querySelector(".polaris");
+const galaxy =
+document.querySelector(".text-galaxy");
 
 
 if(polaris){
@@ -94,15 +84,48 @@ if(polaris){
     "click",
     ()=>{
 
+        document.body.classList.add(
+        "entering"
+        );
 
-        document.body.classList.add("entering");
+
+        for(let i=0;i<60;i++){
+
+            const text =
+            document.createElement("span");
+
+
+            text.innerHTML =
+            i%2===0
+            ?
+            "I LOVE"
+            :
+            "I KNOW";
+
+
+            text.style.left =
+            Math.random()*100+"vw";
+
+
+            text.style.top =
+            Math.random()*100+"vh";
+
+
+            text.style.animationDelay =
+            (i*0.04)+"s";
+
+
+            galaxy.appendChild(text);
+
+        }
 
 
         setTimeout(()=>{
 
-            window.location.href="home.html";
+            window.location.href =
+            "home.html";
 
-        },3000);
+        },5000);
 
 
     });
