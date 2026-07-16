@@ -1,46 +1,107 @@
-const stars = document.querySelectorAll(".star");
-
 const polaris = document.getElementById("polaris");
 
-
-stars.forEach(star => {
-
-
-    star.addEventListener(
-    "mouseenter",
-    ()=>{
+const stars = document.querySelector(".stars");
 
 
-        if(star !== polaris){
+let activated = false;
 
 
-            star.style.boxShadow =
-            "0 0 40px #fff,0 0 80px #7aaaff";
+
+if(polaris && stars){
+
+
+    polaris.addEventListener(
+        "click",
+        ()=>{
+
+
+            if(activated) return;
+
+
+            activated = true;
+
+
+
+            // 北极星爆发
+
+            polaris.classList.add(
+                "starBirth"
+            );
+
+
+
+            // 开始生成星星
+
+            for(let i = 0; i < 35; i++){
+
+
+                setTimeout(()=>{
+
+                    createStar();
+
+                }, i * 80);
+
+
+            }
 
 
         }
+    );
+
+}
 
 
-    });
+
+
+function createStar(){
+
+
+    const star =
+    document.createElement("div");
+
+
+    star.className =
+    "childStar";
 
 
 
-    star.addEventListener(
-    "mouseleave",
-    ()=>{
+    let angle =
+    Math.random() * Math.PI * 2;
 
 
-        if(star !== polaris){
+
+    let radius =
+    80 + Math.random() * 160;
 
 
-            star.style.boxShadow =
-            "0 0 15px white";
+
+    star.style.left =
+    250 +
+    Math.cos(angle) * radius +
+    "px";
 
 
-        }
+
+    star.style.top =
+    150 +
+    Math.sin(angle) * radius +
+    "px";
 
 
-    });
+
+    stars.appendChild(star);
 
 
-});
+
+    setTimeout(()=>{
+
+
+        star.classList.add(
+            "orbit"
+        );
+
+
+    },100);
+
+
+}

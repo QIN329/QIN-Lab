@@ -527,3 +527,139 @@ body::before{
 
 
 }
+
+/* =================
+星星繁衍
+================= */
+
+
+.childStar{
+
+    position:absolute;
+
+    width:8px;
+
+    height:8px;
+
+
+    background:white;
+
+
+    border-radius:50%;
+
+
+    box-shadow:
+
+    0 0 20px white,
+
+    0 0 40px #79baff;
+
+
+}
+
+
+
+.starBirth{
+
+    animation:
+
+    birth 1s;
+
+
+}
+
+
+
+@keyframes birth{
+
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+
+
+    50%{
+
+
+        transform:scale(4);
+
+
+
+        box-shadow:
+
+        0 0 80px white,
+
+        0 0 150px #7dbdff;
+
+
+    }
+
+
+
+    100%{
+
+
+        transform:scale(1);
+
+
+    }
+
+
+}
+
+
+
+
+
+.orbit{
+
+
+    animation:
+
+    orbitMove 4s linear infinite;
+
+
+}
+
+
+
+
+
+@keyframes orbitMove{
+
+
+    from{
+
+
+        transform:
+
+        rotate(0deg)
+
+        translateX(120px)
+
+        rotate(0deg);
+
+
+    }
+
+
+
+    to{
+
+
+        transform:
+
+        rotate(360deg)
+
+        translateX(120px)
+
+        rotate(-360deg);
+
+
+    }
+
+
+}
