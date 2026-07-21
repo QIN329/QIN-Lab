@@ -1,0 +1,245 @@
+/* ==========================================================
+   QIN LAB
+   Scene 01 + Scene 02
+========================================================== */
+
+/* ---------- Reset ---------- */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body,
+#app{
+    width:100%;
+    height:100%;
+}
+
+body{
+    overflow:hidden;
+    background:#000814;
+    font-family:"Cormorant Garamond",serif;
+}
+
+/* ---------- Universe ---------- */
+
+.universe{
+    position:relative;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    background:radial-gradient(circle at 50% 35%,#183d66 0%,#081220 45%,#000814 100%);
+}
+
+/* ==================================================
+   Background Stars
+================================================== */
+
+#stars{
+    position:absolute;
+    inset:0;
+}
+
+.bg-star{
+    position:absolute;
+    border-radius:50%;
+    opacity:.3;
+    animation:bgBreath infinite ease-in-out;
+    box-shadow:0 0 8px rgba(255,255,255,.7);
+}
+
+@keyframes bgBreath{
+    0%{
+        opacity:.2;
+        transform:scale(.8);
+    }
+
+    50%{
+        opacity:1;
+        transform:scale(1.4);
+    }
+
+    100%{
+        opacity:.2;
+        transform:scale(.8);
+    }
+}
+
+/* ==================================================
+   Ursa Minor
+================================================== */
+
+.ursa{
+    position:absolute;
+    left:50%;
+    top:28%;
+    width:260px;
+    height:170px;
+    transform:translateX(-50%);
+}
+
+/* ---------- Stars ---------- */
+
+.star{
+    position:absolute;
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:white;
+    animation:starBreath 4s infinite ease-in-out;
+    box-shadow:0 0 10px white,0 0 22px rgba(255,255,255,.55);
+}
+
+/* 六颗星 */
+
+.s1{
+    left:18px;
+    top:25px;
+    animation-delay:.2s;
+}
+
+.s2{
+    left:70px;
+    top:55px;
+    animation-delay:1.3s;
+}
+
+.s3{
+    left:120px;
+    top:40px;
+    animation-delay:2.5s;
+}
+
+.s4{
+    left:170px;
+    top:72px;
+    animation-delay:.8s;
+}
+
+.s5{
+    left:220px;
+    top:48px;
+    animation-delay:3.4s;
+}
+
+.s6{
+    left:180px;
+    top:120px;
+    animation-delay:1.8s;
+}
+
+/* ---------- Polaris ---------- */
+
+.polaris{
+    left:246px;
+    top:18px;
+    width:12px;
+    height:12px;
+    cursor:pointer;
+    transition:.45s;
+    animation:polarisBreath 3s infinite ease-in-out;
+    box-shadow:0 0 15px #ffffff,0 0 35px #9fdcff,0 0 60px rgba(159,220,255,.8);
+}
+
+.polaris::after{
+    content:"";
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    background:rgba(170,220,255,.18);
+    filter:blur(10px);
+    transition:.45s;
+}
+
+.polaris.active{
+    transform:scale(1.35);
+}
+
+.polaris.active::after{
+    width:58px;
+    height:58px;
+    background:rgba(170,220,255,.38);
+    filter:blur(20px);
+}
+
+/* ==================================================
+   Dialogue
+================================================== */
+
+.dialog{
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:18px;
+    user-select:none;
+    pointer-events:none;
+}
+
+.love,
+.know{
+    font-size:clamp(60px,7vw,120px);
+    letter-spacing:.18em;
+    color:rgba(255,255,255,.92);
+    font-weight:300;
+}
+
+.love{
+    opacity:1;
+}
+
+.know{
+    opacity:0;
+    transform:translateY(30px);
+    transition:opacity 1.8s ease,transform 1.8s ease;
+}
+
+.know.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* ==================================================
+   Animation
+================================================== */
+
+@keyframes starBreath{
+    0%{
+        opacity:.45;
+        transform:scale(.9);
+    }
+
+    50%{
+        opacity:1;
+        transform:scale(1.15);
+    }
+
+    100%{
+        opacity:.45;
+        transform:scale(.9);
+    }
+}
+
+@keyframes polarisBreath{
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.3);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+}
